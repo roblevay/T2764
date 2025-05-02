@@ -34,16 +34,13 @@ WITH INIT;
 
 ## 🧪 Step 2 – Add an Agent Token for Job Name
 
-Edit the job step and change the command to include this line for logging:
+Edit the job step 
+Click Advanced
+At output file, type D:\DemoDatabases\$(ESCAPE_NONE(MACHINENAME))_$(ESCAPE_NONE(JOBNAME))_$(ESCAPE_NONE(STRTDT)).txt
 
-```sql
-PRINT 'Running job: $(ESCAPE_NONE(JOBNAME))';
-BACKUP DATABASE AdventureWorks
-TO DISK = 'C:\DemoDatabases\AdventureWorks.bak'
-WITH INIT;
-```
 
-> This token will print the job name when the step runs.
+
+ This token will create a file with the machine name, job name and date and time when the job is run
 
 ---
 
@@ -59,15 +56,12 @@ WITH INIT;
 
 ## 🔧 Step 4 – Create a Shrink Job on `North`
 
-1. On `North`, create a new job named `Shrink Adventureworks`.
-2. Add a step with the following command:
+1. On `North`, right-click the Adventureworks database and select Task...Shrink database
+2. From the Script menu, select Script action to job
+3. Use the name Shrink Database Adventureworks
+4. Click OK
+5. Click Cancel so that the database is not shrunk right now
 
-```sql
-PRINT 'Shrink operation on $(ESCAPE_NONE(MACHINENAME)) at $(ESCAPE_NONE(STRTDT))';
-DBCC SHRINKDATABASE (AdventureWorks);
-```
-
-3. Save the job.
 
 ---
 
