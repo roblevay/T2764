@@ -48,8 +48,9 @@ ORDER BY bs.backup_finish_date DESC;
    - Backup size
    - Device used (e.g., file path)
    - Status of each backup
+7. Right-click the report and select Export. You can export this report to Excel, Word or PDF using this method.
 
-> 🔍 You can export this report to Excel or PDF using the toolbar in the report viewer.
+
 
 ---
 
