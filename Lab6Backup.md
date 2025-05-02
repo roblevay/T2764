@@ -14,6 +14,7 @@ Use the `msdb` database, which stores all backup and restore activity.
 ### Example:
 
 ```sql
+USE msdb
 SELECT 
     bs.backup_finish_date,
     bs.type AS backup_type,
