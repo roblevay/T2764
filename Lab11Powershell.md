@@ -118,28 +118,32 @@ You may get different messages, depending on what is alreadt installed. It does 
 C:\Pshell\ShowDatabasesNew.ps1
 ```
 
+Paste this in the script:
 
 ```powershell
-# Visa alla databaser på servern
+# Import the module
+Import-Module -Name SqlServer
+
+# Show all databases
 Get-SqlDatabase -ServerInstance "localhost"
 
-# Visa alla SQL Agent-jobb
+# Show all jobs
 Get-SqlAgentJob -ServerInstance "localhost"
 
-# Visa alla inloggningar
+# Show all logins
 Get-SqlLogin -ServerInstance "localhost"
 
-# Visa alla tabeller i en viss databas
+# Show all tables in a database
 Get-SqlTable -ServerInstance "localhost" -Database "AdventureWorks"
 
-# Visa information om SQL Server-instansen
+# Show info about an instance
 Get-SqlInstance -ServerInstance "localhost"
 
-# Visa alla användare i databasen msdb
+# Show all users in the database msdb
 Get-SqlUser -ServerInstance "localhost" -Database "msdb"
 ```
 
-Vill du ha en samling av dessa i en `.ps1`-fil eller `.md`-övning?
+
 
 
 ## ✅ Result
