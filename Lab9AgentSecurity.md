@@ -204,8 +204,6 @@ Tack Robert! Här kommer din begärda omskrivning – samma sak men med **grafis
 
 ---
 
-Vill du att jag lägger in det här som ersättning i `.md`-filen också?
----
 
 ## ✅ Step 6 – Update Job to Use Proxy
 
