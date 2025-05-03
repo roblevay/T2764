@@ -109,3 +109,9 @@ To execute a job successfully, both the owner and the user executing the job nee
 
 These roles are useful for delegating job management securely in multi-user environments.
 
+
+
+
+# 🧪 Exercise 2: SQL Server Security - using Credentials and proxies
+
+
