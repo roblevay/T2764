@@ -88,11 +88,12 @@ C:\Pshell\ShowDatabases.ps1
 3. Comment out the old line (add `#` at the start), then add:
 
 ```powershell
-# Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost"
+# Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost" -Encrypt Optional -TrustServerCertificate
 
-Invoke-Sqlcmd -Query "SELECT name FROM sysjobs" -ServerInstance "localhost" -Database msdb | Tee-Object -FilePath C:\Pshell\Jobs.csv
-Invoke-Sqlcmd -Query "SELECT name FROM sys.server_principals" -ServerInstance "localhost" | Tee-Object -FilePath C:\Pshell\Logins.csv
-Invoke-Sqlcmd -Query "SELECT name FROM sys.database_principals" -ServerInstance "localhost" -Database msdb | Tee-Object -FilePath C:\Pshell\MsdbUsers.csv
+Invoke-Sqlcmd -Query "SELECT name FROM sysjobs" -ServerInstance "localhost" -Database msdb -Encrypt Optional -TrustServerCertificate | Tee-Object -FilePath C:\Pshell\Jobs.csv
+Invoke-Sqlcmd -Query "SELECT name FROM sys.server_principals" -ServerInstance "localhost" -Encrypt Optional -TrustServerCertificate | Tee-Object -FilePath C:\Pshell\Logins.csv
+Invoke-Sqlcmd -Query "SELECT name FROM sys.database_principals" -ServerInstance "localhost" -Database msdb -Encrypt Optional -TrustServerCertificate | Tee-Object -FilePath C:\Pshell\MsdbUsers.csv
+
 ```
 
 4. Press **F5** to run the script.
