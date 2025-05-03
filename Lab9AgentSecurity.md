@@ -115,3 +115,111 @@ These roles are useful for delegating job management securely in multi-user envi
 # 🧪 Exercise 2: SQL Server Security - using Credentials and proxies
 
 
+## 🎯 Objective
+
+1. Create a Windows user: `North\testuser` with password `myS3cret`.
+2. Configure SQL Server Agent to run under this account.
+3. Create a SQL Agent job that fails to run a CmdExec step due to insufficient privileges.
+4. Create a credential using `North\Student` with `myS3cret`.
+5. Create a proxy named `studproxy` based on that credential.
+6. Update the job to use the proxy so it succeeds.
+
+---
+
+## 🛠️ Step 1 – Create a Windows User
+
+1. Open PowerShell or Computer Management.
+2. Create user: `North\testuser`  
+   Password: `myS3cret`
+
+Example (PowerShell as admin):
+
+```powershell
+net user testuser myS3cret /add /domain
+```
+
+---
+
+## 🧰 Step 2 – Set SQL Server Agent to Run as testuser
+
+1. Open **SQL Server Configuration Manager**.
+2. Go to **SQL Server Services**.
+3. Right-click **SQL Server Agent** → **Properties**.
+4. On the **Log On** tab:
+   - Select **This account**
+   - Enter `North\testuser`
+   - Password: `myS3cret`
+5. Click **OK**, then restart **SQL Server Agent**.
+
+---
+
+## ❌ Step 3 – Create a Failing CmdExec Job Step
+
+1. In SSMS, create a new job called `Test Cmd Job`.
+2. Add a step:
+   - Type: **Operating system (CmdExec)**
+   - Command:
+
+```cmd
+whoami > C:\DemoDatabases\whoami.txt
+```
+
+3. Run the job. It should fail with "Access Denied" unless `testuser` is local admin.
+
+---
+
+Tack Robert! Här kommer din begärda omskrivning – samma sak men med **grafiska steg i SSMS**, så du slipper skriva T-SQL.
+
+---
+
+## 🔐 Step 4 – Create a Credential (Graphically)
+
+1. In SSMS, expand **Security** > right-click **Credentials** > **New Credential**.
+2. In the dialog:
+   - **Credential Name**: `Cred_Student`
+   - **Identity**: `North\\Student`
+   - **Password**: `myS3cret`
+   - Confirm the password
+3. Click **OK**.
+
+✅ You've now created a credential that can be used to run jobs under a different Windows account.
+
+---
+
+## 🧑‍💼 Step 5 – Create a Proxy (Graphically)
+
+1. Expand **SQL Server Agent** > **Proxies** > **Operating System (CmdExec)**.
+2. Right-click **CmdExec** > **New Proxy**.
+3. Fill in:
+   - **Proxy name**: `studproxy`
+   - **Credential name**: choose `Cred_Student` from the dropdown
+   - **Description**: (optional)
+4. Under **Subsystems**, check `CmdExec`.
+5. Under **Principals**, click **Add** and select:
+   - A SQL Agent role (e.g., `SQLAgentUserRole` in `msdb`)
+   - Or individual logins/users who can use the proxy
+6. Click **OK**.
+
+✅ You’ve now created a proxy that allows safe elevation for CmdExec job steps – without giving the Agent account full admin rights.
+
+---
+
+Vill du att jag lägger in det här som ersättning i `.md`-filen också?
+---
+
+## ✅ Step 6 – Update Job to Use Proxy
+
+1. Edit the job step.
+2. In the **Run as** dropdown, choose `studproxy`.
+3. Save and run the job again.
+
+It should now succeed, and the file `C:\DemoDatabases\whoami.txt` will show `North\Student`.
+
+---
+
+## 📝 Summary
+
+- SQL Server Agent can run as a low-privilege account.
+- Elevated operations can be performed using proxies with credentials.
+- This separates job ownership from privilege escalation cleanly and securely.
+
