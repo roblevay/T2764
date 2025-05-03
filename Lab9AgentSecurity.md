@@ -70,7 +70,11 @@ PRINT 'Hello from AgentReader';
 - ✅ Can **view** jobs owned by others (e.g., `TestJob_AgentUser`)
 - ❌ Cannot modify, enable, or disable jobs they do not own
 
+
 ### Log in as `AgentOperator`:
+
+1. Connect to SSMS using login `AgentOperator`.
+2. Verify that you can create, view. start and stop all jobs
 
 - ✅ Same as AgentReader
 - ✅ Can also **enable/disable or start/stop jobs** owned by others
