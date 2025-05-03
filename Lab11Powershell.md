@@ -55,7 +55,7 @@ notepad C:\Pshell\ShowDatabases.ps1
 
 ```powershell
 Install-Module -Name SqlServer -Scope CurrentUser
-Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost"
+Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost" -Encrypt Optional -TrustServerCertificate
 ```
 
 3. Save and close.
