@@ -54,6 +54,7 @@ notepad C:\Pshell\ShowDatabases.ps1
 2. Paste this basic SQL discovery script:
 
 ```powershell
+Install-Module -Name SqlServer -Scope CurrentUser
 Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost"
 ```
 
@@ -64,9 +65,8 @@ Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost
 ```powershell
 C:\Pshell\ShowDatabases.ps1
 ```
+You may be asked whether you trust the repository. In this case, press a to confirm.
 
-> 📝 Note: Requires `SqlServer` module. Install with:  
-> `Install-Module -Name SqlServer -Scope CurrentUser`
 
 ---
 
