@@ -172,12 +172,12 @@ Tack Robert! Här kommer din begärda omskrivning – samma sak men med **grafis
 
 ---
 
-## 🔐 Step 4 – Create a Credential (Graphically)
+## 🔐 Step 4 – Create a Credential 
 
 1. In SSMS, expand **Security** > right-click **Credentials** > **New Credential**.
 2. In the dialog:
    - **Credential Name**: `Cred_Student`
-   - **Identity**: `North\\Student`
+   - **Identity**: `North\Student`
    - **Password**: `myS3cret`
    - Confirm the password
 3. Click **OK**.
@@ -186,7 +186,7 @@ Tack Robert! Här kommer din begärda omskrivning – samma sak men med **grafis
 
 ---
 
-## 🧑‍💼 Step 5 – Create a Proxy (Graphically)
+## 🧑‍💼 Step 5 – Create a Proxy 
 
 1. Expand **SQL Server Agent** > **Proxies** > **Operating System (CmdExec)**.
 2. Right-click **CmdExec** > **New Proxy**.
