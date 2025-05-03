@@ -63,7 +63,7 @@ Try to read other jobs. This should not be possible.
 PRINT 'Hello from AgentReader';
 ```
 4. Read the job called `TestJob_AgentUser. This should work
-5, Try to start this job. This should not work
+5. Try to start this job. This should not work
 
 ### SQLAgentReaderRole
 - ✅ Can create their own jobs
