@@ -211,7 +211,7 @@ Tack Robert! Här kommer din begärda omskrivning – samma sak men med **grafis
 2. In the **Run as** dropdown, choose `studproxy`.
 3. Save and run the job again.
 
-It should now succeed, and the file `C:\DemoDatabases\whoami.txt` will show `North\Student`.
+It should now succeed, and the file `C:\Program Files\whoami.txt` will show `North\Student`.
 
 ---
 
