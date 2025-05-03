@@ -137,28 +137,19 @@ Get-SqlLogin -ServerInstance "localhost"
 Get-SqlInstance -ServerInstance "localhost"
 
 # Create a database
-Invoke-Sqlcmd -ServerInstance "localhost" -Query "CREATE DATABASE TestDB"
+Invoke-Sqlcmd -ServerInstance "localhost" -Query "CREATE DATABASE TestDB" -Encrypt Optional -TrustServerCertificate
 
 # Delete a database
-Invoke-Sqlcmd -ServerInstance "localhost" -Query "DROP DATABASE TestDB"
+Invoke-Sqlcmd -ServerInstance "localhost" -Query "DROP DATABASE TestDB" -Encrypt Optional -TrustServerCertificate
 
 # Backup a database
 Backup-SqlDatabase -ServerInstance "localhost" -Database "AdventureWorks" -BackupFile "C:\SqlBackups\AdventureWorks.bak"
 
-
 ```
 
+Run each of the commands separately by selecting one and clicking Run Selection
 
 
-
-## ✅ Result
-
-You will now see:
-- A list of jobs from `msdb` on the screen and saved in `Jobs.csv`
-- A list of logins from the server saved in `Logins.csv`
-- A list of users in the `msdb` database saved in `MsdbUsers.csv`
-
-These results are also displayed in the ISE output pane.
 
 ---
 
@@ -168,4 +159,5 @@ These results are also displayed in the ISE output pane.
 - You used `Invoke-Sqlcmd` to query SQL Server
 - You saved query output to CSV using `Tee-Object`
 - You used PowerShell ISE to edit and test scripts interactively
+- .you have installed, imported and used the module Sqlserver
 
