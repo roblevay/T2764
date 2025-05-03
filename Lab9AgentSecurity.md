@@ -49,12 +49,23 @@ EXEC sp_addrolemember 'SQLAgentOperatorRole', 'AgentOperator';
 PRINT 'Hello from AgentUser';
 ```
 
+Try to read other jobs. This should not be possible.
 ---
 
-## 👁️ Step 4 – Test Permissions
+## 👁️ Step 4 –AgentReader
 
 ### Log in as `AgentReader`:
 
+1. Connect to SSMS using login `AgentUser`.
+2. Create a job called `TestJob_AgentReader` with one step:
+
+3. ```sql
+PRINT 'Hello from AgentReader';
+```
+4. Read the job called `TestJob_AgentUser. This should work
+5, Try to start this job. This should not work
+
+### SQLAgentReaderRole
 - ✅ Can create their own jobs
 - ✅ Can **view** jobs owned by others (e.g., `TestJob_AgentUser`)
 - ❌ Cannot modify, enable, or disable jobs they do not own
