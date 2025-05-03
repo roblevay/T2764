@@ -48,8 +48,8 @@ EXEC sp_addrolemember 'SQLAgentOperatorRole', 'AgentOperator';
 ```sql
 PRINT 'Hello from AgentUser';
 ```
-
-Try to read other jobs. This should not be possible.
+Verify that you can run the job.
+Try to read other jobs. You should only see your own job.
 ---
 
 ## 👁️ Step 4 –AgentReader
@@ -62,8 +62,9 @@ Try to read other jobs. This should not be possible.
 ```sql
 PRINT 'Hello from AgentReader';
 ```
-4. Read the job called `TestJob_AgentUser. This should work
-5. Try to start this job. This should not work
+4. Verify that you can run the job.
+5. Read the job called `TestJob_AgentUser. This should work. You should see all the jobs on the server.
+6. Try to start this job. This should not work
 
 ### SQLAgentReaderRole
 - ✅ Can create their own jobs
@@ -75,9 +76,13 @@ PRINT 'Hello from AgentReader';
 
 1. Connect to SSMS using login `AgentOperator`.
 2. Verify that you can create, view. start and stop all jobs
+3. Try to modify the job `TestJob_AgentUser`. This should not work
+4. Try to delete  the job `TestJob_AgentUser`. This should not work
 
 - ✅ Same as AgentReader
 - ✅ Can also **enable/disable or start/stop jobs** owned by others
+  - ❌ Cannot modify or delete jobs they do not own
+- 
 
 ---
 
