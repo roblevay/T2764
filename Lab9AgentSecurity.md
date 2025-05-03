@@ -56,10 +56,10 @@ Try to read other jobs. This should not be possible.
 
 ### Log in as `AgentReader`:
 
-1. Connect to SSMS using login `AgentUser`.
+1. Connect to SSMS using login `AgentReader`.
 2. Create a job called `TestJob_AgentReader` with one step:
 
-3. ```sql
+```sql
 PRINT 'Hello from AgentReader';
 ```
 4. Read the job called `TestJob_AgentUser. This should work
