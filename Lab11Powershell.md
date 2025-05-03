@@ -142,6 +142,7 @@ Invoke-Sqlcmd -ServerInstance "localhost" -Query "CREATE DATABASE TestDB"
 # Delete a database
 Invoke-Sqlcmd -ServerInstance "localhost" -Query "DROP DATABASE TestDB"
 
+# Backup a database
 Backup-SqlDatabase -ServerInstance "localhost" -Database "AdventureWorks" -BackupFile "C:\SqlBackups\AdventureWorks.bak"
 
 
