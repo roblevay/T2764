@@ -102,11 +102,44 @@ Invoke-Sqlcmd -Query "SELECT name FROM sys.database_principals" -ServerInstance 
 
 ## 🧑‍💻 Step 4 – Install the SqlServer module
 
-To install the SqlServer module, run
+To install the SqlServer module, run this in powershell:
 
 ```powershell
 Install-Module -Name SqlServer -Scope CurrentUser -Force 
 ```
+You may get different messages, depending on what is alreadt installed. It does not matter for now.
+
+## 🧑‍💻 Step 5 – Modify Script Using PowerShell ISE
+
+1. Open **PowerShell ISE as Administrator**.
+2. Create the script:
+
+```powershell
+C:\Pshell\ShowDatabasesNew.ps1
+```
+
+
+```powershell
+# Visa alla databaser på servern
+Get-SqlDatabase -ServerInstance "localhost"
+
+# Visa alla SQL Agent-jobb
+Get-SqlAgentJob -ServerInstance "localhost"
+
+# Visa alla inloggningar
+Get-SqlLogin -ServerInstance "localhost"
+
+# Visa alla tabeller i en viss databas
+Get-SqlTable -ServerInstance "localhost" -Database "AdventureWorks"
+
+# Visa information om SQL Server-instansen
+Get-SqlInstance -ServerInstance "localhost"
+
+# Visa alla användare i databasen msdb
+Get-SqlUser -ServerInstance "localhost" -Database "msdb"
+```
+
+Vill du ha en samling av dessa i en `.ps1`-fil eller `.md`-övning?
 
 
 ## ✅ Result
