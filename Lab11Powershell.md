@@ -133,14 +133,18 @@ Get-SqlAgentJob -ServerInstance "localhost"
 # Show all logins
 Get-SqlLogin -ServerInstance "localhost"
 
-# Show all tables in a database
-Get-SqlTable -ServerInstance "localhost" -Database "AdventureWorks"
-
 # Show info about an instance
 Get-SqlInstance -ServerInstance "localhost"
 
-# Show all users in the database msdb
-Get-SqlUser -ServerInstance "localhost" -Database "msdb"
+# Create a database
+Invoke-Sqlcmd -ServerInstance "localhost" -Query "CREATE DATABASE TestDB"
+
+# Delete a database
+Invoke-Sqlcmd -ServerInstance "localhost" -Query "DROP DATABASE TestDB"
+
+Backup-SqlDatabase -ServerInstance "localhost" -Database "AdventureWorks" -BackupFile "C:\SqlBackups\AdventureWorks.bak"
+
+
 ```
 
 
