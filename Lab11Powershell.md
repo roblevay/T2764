@@ -66,6 +66,12 @@ Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost
 C:\Pshell\ShowDatabases.ps1
 ```
 You may be asked whether you trust the repository. In this case, press a to confirm.
+To avoid this question permanently, type:
+
+```powershell
+Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
+```
+
 
 
 ---
