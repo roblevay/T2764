@@ -81,9 +81,22 @@ PRINT 'Hello from AgentReader';
 
 - ✅ Same as AgentReader
 - ✅ Can also **enable/disable or start/stop jobs** owned by others
-  - ❌ Cannot modify or delete jobs they do not own
-- 
+- ❌ Cannot modify or delete jobs they do not own
 
+1. Still logged in as AgentOperator, create a job named  `Operator Master` to backup the master database
+
+```sql
+BACKUP DATABASE master TO DISK = 'master.bak'
+```
+2. Try to execute the job. This hould not work. Why does it not work?
+
+
+### Log in as `AgentOperator`:
+
+1. Disconnect all the agent users from ssms and verify that you are logged in as North\Student using windows authentication
+2. Try to execute the job `Operator Master`. It should not work
+3. in the Job Properties, change the owner to sa and try to execute the job again. Now it should work
+To execute a job successfully, both the owner and the user executing the job need permissions
 ---
 
 ## ✅ Summary
