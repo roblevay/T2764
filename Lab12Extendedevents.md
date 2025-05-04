@@ -2,7 +2,7 @@
 
 ## 📘 Overview
 
-This exercise guide walks you through creating and verifying **3 different Extended Events** sessions using SQL Server Management Studio (SSMS). Each task uses the **graphical interface** and includes a verification step.
+This guide walks you through creating and verifying **3 different Extended Events sessions** using SQL Server Management Studio (**SSMS**) — **not using the Wizard**. We make sure to capture **only relevant events**, with **minimal noise**.
 
 ---
 
@@ -14,30 +14,37 @@ Track queries that take longer than 5 seconds to execute.
 
 ### 🛠️ Steps:
 
-1. Open **SSMS** and connect to your SQL Server instance.
-2. Expand `Management` > expand `Extended Events` > right-click `Sessions` > choose **New Session Wizard**.
-3. Click **Next** > Name the session `LongQueries`.
-4. Select **Do not use a template** > click **Next**.
-5. In **Events Selection**, check `sql_statement_completed` and click `>`
-6. Click **Next**
-7. In the Capture Global Fields window, click **Next**
-10. Click **Next**.
-11. For **Specify Session Data Storage**, select:
-12.  `Save to file` (choose folder like `C:\XELogs\LongQueries.xel`)
-11. Click **Finish** to create the session.
-12. Right-click the session > **Start Session**.
+1. In SSMS, go to `Management > Extended Events > Sessions`.
+2. Right-click `Sessions` > **New Session**.
+3. Name: `LongQueries`
+4. Uncheck **Start session at server startup**.
+5. On the **Events** page:
+
+   * Click **Add Event**
+   * Search for and select `sql_statement_completed`
+   * Click **Configure**
+   * In **Predicate (Filter)** tab, add:
+
+     * Field: `duration`
+     * Operator: `>`
+     * Value: `5000000`
+   * In **Fields**, deselect everything you don’t need — keep `sql_text`, `duration`, `database_id` etc.
+6. Go to **Data Storage** page:
+
+   * Click **Add** > Choose `event_file`
+   * Set path, e.g. `C:\XELogs\LongQueries.xel`
+7. Save and close the session.
+8. Right-click the session > **Start Session**.
 
 ### ✅ Verification:
 
-1. Right-click your session > **Watch Live Data**.
-2. Run this query in another SSMS window:
+1. Run:
 
    ```sql
    WAITFOR DELAY '00:00:06';
    ```
-
-3. Confirm the event appears in the live data view.
-4. Stop the extended events session
+2. Right-click the session > **Watch Live Data**.
+3. Confirm event shows with duration > 5000000 µs.
 
 ---
 
@@ -45,27 +52,26 @@ Track queries that take longer than 5 seconds to execute.
 
 ### 🎯 Goal:
 
-Capture login failures to the SQL Server.
+Log failed login attempts only.
 
 ### 🛠️ Steps:
 
-1. New Session Wizard > Name: `FailedLogins`.
-2. No template > Click **Next**.
-3. Event Selection:
+1. Create new session: `FailedLogins`
+2. On the **Events** page:
 
-   * Add `error_reported` event.
-4. Configure > Filters:
+   * Add `error_reported`
+   * Filter:
 
-   * Field: `error_number`
-   * Operator: `=`
-   * Value: `18456`
-5. Store data to file: `C:\XELogs\FailedLogins.xel`
-6. Finish and start the session.
+     * Field: `error_number` = `18456`
+   * In Fields, include `username`, `client_hostname`, and `message`
+3. Storage: add an `event_file`, e.g. `C:\XELogs\FailedLogins.xel`
+4. Save and start session.
 
 ### ✅ Verification:
 
-1. In a different SSMS or using SQLCMD, try logging in with wrong credentials.
-2. Watch Live Data for `FailedLogins` session — the event should appear.
+1. Try to log in with bad credentials.
+2. Watch Live Data or open the .xel file.
+3. Confirm failed login captured.
 
 ---
 
@@ -73,31 +79,28 @@ Capture login failures to the SQL Server.
 
 ### 🎯 Goal:
 
-Track deadlocks in your SQL Server.
+Log only actual deadlocks.
 
 ### 🛠️ Steps:
 
-1. New Session Wizard > Name: `Deadlocks`.
-2. No template > Next.
-3. Event Selection:
-
-   * Add `xml_deadlock_report`
-4. No filter needed.
-5. Output to file: `C:\XELogs\Deadlocks.xel`
-6. Finish and start the session.
+1. Create new session: `Deadlocks`
+2. Add event: `xml_deadlock_report`
+3. No filter needed.
+4. Optional: Add fields like `database_name`, `sql_text`
+5. Add `event_file`, e.g. `C:\XELogs\Deadlocks.xel`
+6. Save and start session.
 
 ### ✅ Verification:
 
-1. Use a deadlock script from the internet or training material to simulate a deadlock.
-2. Watch Live Data and check for the `xml_deadlock_report` event.
+1. Simulate a deadlock with two sessions locking rows in reverse order.
+2. View captured XML reports in Live Data or file.
 
 ---
 
-## 📂 Tip: Reading .xel Files Later
+## 📂 Tip: Viewing .xel Files
 
-You can open `.xel` files by right-clicking on `Extended Events > Sessions`, then choosing **"Open > File..."**.
+You can always right-click on a session and choose **View Target Data** or **Open > File...**
 
 ---
 
-Happy tracing! 🕵️‍♂️
-
+Now you're in control — no wizard, no junk. 🔍
