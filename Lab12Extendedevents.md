@@ -63,7 +63,7 @@ Log failed login attempts only.
    * Filter:
 
      * Field: `error_number` = `18456`
-   * In Fields, include `username`, `client_hostname`, and `sql_text`
+   * In Fields, include `client_hostname`
 3. Storage: add an `event_file`, e.g. `C:\XELogs\FailedLogins.xel`
 4. Save and start session.
 
