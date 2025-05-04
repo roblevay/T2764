@@ -92,7 +92,7 @@ Log only actual deadlocks.
 
 
 
-### 🧪 Test tje session: Simulate a Deadlock
+### 🧪 Test the session: Simulate a Deadlock
 
 #### 1. Create test table
 ```sql
