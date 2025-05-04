@@ -15,7 +15,7 @@ Track queries that take longer than 5 seconds to execute.
 ### 🛠️ Steps:
 
 1. Open **SSMS** and connect to your SQL Server instance.
-2. Expand `Management` > expand `Extended Events` > right-click 'Sessions' > choose **New Session Wizard**.
+2. Expand `Management` > expand `Extended Events` > right-click `Sessions` > choose **New Session Wizard**.
 3. Click **Next** > Name the session `LongQueries`.
 4. Select **Do not use a template** > click **Next**.
 5. In **Events Selection**, check `sql_statement_completed`.
