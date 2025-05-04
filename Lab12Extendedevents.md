@@ -18,7 +18,7 @@ Track queries that take longer than 5 seconds to execute.
 2. Expand `Management` > expand `Extended Events` > right-click `Sessions` > choose **New Session Wizard**.
 3. Click **Next** > Name the session `LongQueries`.
 4. Select **Do not use a template** > click **Next**.
-5. In **Events Selection**, check `sql_statement_completed` abd click `>`
+5. In **Events Selection**, check `sql_statement_completed` and click `>`
 6. Click **Configure > Filters** > Add filter:
 
    * Field: `duration`
