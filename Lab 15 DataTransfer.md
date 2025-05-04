@@ -80,24 +80,32 @@ SELECT * FROM AdventureWorks.dbo.PersonCopy
 
 ## Exercise 4: Query a Flat File Using OPENQUERY
 
-1. Create a format file using bcp (run from command prompt):
+1. Create a new table to use (this is done to avoid problems with column types)
+
+```sql
+SELECT Businessentityid,firstname,lastname INTO nyapersoner FROM Adventureworks.person.person
+```
+
+2. Create a text file called nyapersoner.txt to be used
 
  ```bash
-bcp adventureworks.dbo.Personcopy format nul -c -x -f "c:\data\personcopy.fmt"  -T
+bcp "SELECT * FROM [Adventureworks].[dbo].[nyapersoner]" queryout "c:\data\nyapersoner.txt" -c -T
 ```
 
-Check for the existence of `c:\data\personcopy.fmt`
-
-
+3. Create a format file using bcp
+   
+ ```bash
+bcp adventureworks2017.dbo.nyapersoner format nul -c -x -f "c:\data\nyapersoner.fmt" -S localhost -T
 ```
 
-2. Query the text file as if it were a table:
+4. Use OPENROWSET to read from the text file
 
 ```sql
 SELECT Firstname,lastname
 FROM OPENROWSET(
-  BULK 'c:\data\Persondata.txt',
-  FORMATFILE='c:\data\personcopy.fmt'
+  BULK 'c:\data\nyapersoner.txt',
+  FORMATFILE='c:\data\nyapersoner.fmt'
 ) AS t;
 ```
+
 
