@@ -1,3 +1,3 @@
 @echo off
-powershell.exe -ExecutionPolicy Bypass -File ".\Ex1.ps1"
+powershell.exe -ExecutionPolicy Bypass -File "%~dp0Ex1.ps1"
 pause
