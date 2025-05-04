@@ -14,6 +14,12 @@ Download and execute the PowerShell file:
 Troubleshooting/Ex1.ps1
 ```
 
+And the bat file
+
+```
+Troubleshooting/RunEx1.bat
+```
+
 This script configures the SQL Server to run in Windows Authentication mode **only**, and stops the SQL Server service.
 
 ---
