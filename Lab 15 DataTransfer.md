@@ -43,37 +43,23 @@ bcp AdventureWorks.dbo.PersonCopy in C:\Data\Persondata.txt -c -t, -T -S localho
 ```sql
 SELECT * FROM AdventureWorks.dbo.PersonCopy
 ```
+---
 
-4. Empty the `PersonCopy` table:
 
-```sql
-TRUNCATE TABLE PersonCopy;
-```
-
-4. Use `BULK INSERT` to load the data:
-
-```sql
-BULK INSERT PersonCopy
-FROM 'C:\Path\To\PersonBcp.txt'
-WITH (
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n'
-);
-```
 
 ## Exercise 3: Use BULK INSERT to Load Data
 
 1. Empty the `PersonCopy` table:
 
 ```sql
-TRUNCATE TABLE PersonCopy;
+TRUNCATE TABLE AdventureWorks.dbo.PersonCopy;
 ```
 
 2. Use `BULK INSERT` to refill it from the original flat file:
 
 ```sql
-BULK INSERT PersonCopy
-FROM 'C:\Path\To\PersonData.txt'
+BULK INSERT AdventureWorks.dbo.PersonCopy
+FROM 'C:\Data\PersonData.txt'
 WITH (
     FIELDTERMINATOR = ',',
     ROWTERMINATOR = '\n',
