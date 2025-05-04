@@ -151,6 +151,8 @@ Transaction (Process ID xx) was deadlocked on resources with another process and
 
 You can catch this using the `xml_deadlock_report` Extended Event.
 
+In the Live data window, double-click on the xml report to expand it
+
 
 
 
