@@ -90,10 +90,68 @@ Log only actual deadlocks.
 5. Add `event_file`, e.g. `C:\XELogs\Deadlocks.xel`
 6. Save and start session.
 
-### ✅ Verification:
 
-1. Simulate a deadlock with two sessions locking rows in reverse order.
-2. View captured XML reports in Live Data or file.
+
+````md
+## 🔄 Creating a Deadlock in SQL Server
+
+
+### 🧪 Step-by-step: Simulate a Deadlock
+
+#### 1. Create test table
+```sql
+DROP TABLE IF EXISTS DeadlockTest;
+CREATE TABLE DeadlockTest (
+    ID INT PRIMARY KEY,
+    Value VARCHAR(100)
+);
+
+INSERT INTO DeadlockTest (ID, Value)
+VALUES (1, 'First'), (2, 'Second');
+````
+
+#### 2. Open **two separate SSMS query windows** — Session A and Session B.
+
+---
+
+### 🪩 Session A
+
+```sql
+BEGIN TRAN;
+UPDATE DeadlockTest SET Value = 'A1' WHERE ID = 1;
+-- Wait here to simulate overlap
+WAITFOR DELAY '00:00:05';
+UPDATE DeadlockTest SET Value = 'A2' WHERE ID = 2;
+COMMIT;
+```
+
+---
+
+### 🪩 Session B
+
+```sql
+BEGIN TRAN;
+UPDATE DeadlockTest SET Value = 'B1' WHERE ID = 2;
+-- Wait to collide with A
+WAITFOR DELAY '00:00:05';
+UPDATE DeadlockTest SET Value = 'B2' WHERE ID = 1;
+COMMIT;
+```
+
+---
+
+### ✅ Result
+
+One of the sessions will be chosen as the deadlock victim and get an error:
+
+```
+Transaction (Process ID xx) was deadlocked on resources with another process and has been chosen as the deadlock victim.
+```
+
+You can catch this using the `xml_deadlock_report` Extended Event.
+
+
+
 
 ---
 
@@ -102,5 +160,3 @@ Log only actual deadlocks.
 You can always right-click on a session and choose **View Target Data** or **Open > File...**
 
 ---
-
-Now you're in control — no wizard, no junk. 🔍
