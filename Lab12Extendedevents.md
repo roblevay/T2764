@@ -23,7 +23,7 @@ Track queries that take longer than 5 seconds to execute.
 7. In the Capture Global Fields window, click **Next**
 10. Click **Next**.
 11. For **Specify Session Data Storage**, select:
-12. * `Save to file` (choose folder like `C:\XELogs\LongQueries.xel`)
+12.  `Save to file` (choose folder like `C:\XELogs\LongQueries.xel`)
 11. Click **Finish** to create the session.
 12. Right-click the session > **Start Session**.
 
