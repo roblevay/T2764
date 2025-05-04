@@ -32,13 +32,19 @@ BusinessEntityID    INT
 )
 ```
 
-2. Use `bcp` to export a table to a file (run from Command Prompt):
+2. Use `bcp` to export a file to a table (run from Command Prompt):
 
 ```bash
-bcp AdventureWorks.dbo.PersonCopy out C:\Data\PersonBcp.txt -c -t, -T -S localhost
+bcp AdventureWorks.dbo.PersonCopy in C:\Data\Persondata.txt -c -t, -T -S localhost
 ```
 
-3. Empty the `PersonCopy` table:
+3.Check the table contents
+
+```sql
+SELECT * FROM AdventureWorks.dbo.PersonCopy
+```
+
+4. Empty the `PersonCopy` table:
 
 ```sql
 TRUNCATE TABLE PersonCopy;
