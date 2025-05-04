@@ -19,17 +19,13 @@ Track queries that take longer than 5 seconds to execute.
 3. Click **Next** > Name the session `LongQueries`.
 4. Select **Do not use a template** > click **Next**.
 5. In **Events Selection**, check `sql_statement_completed` and click `>`
-6. Click **Configure > Filters** > Add filter:
-
-   * Field: `duration`
-   * Operator: `>`
-   * Value: `5000000` (microseconds = 5 seconds)
-7. Click **Next**.
-8. For **Data Storage**, select:
-
-   * `Save to file` (choose folder like `C:\XELogs\LongQueries.xel`)
-9. Click **Finish** to create the session.
-10. Right-click the session > **Start Session**.
+6. Click **Next**
+7. In the Capture Global Fields window, click **Next**
+10. Click **Next**.
+11. For **Specify Session Data Storage**, select:
+12. * `Save to file` (choose folder like `C:\XELogs\LongQueries.xel`)
+11. Click **Finish** to create the session.
+12. Right-click the session > **Start Session**.
 
 ### ✅ Verification:
 
