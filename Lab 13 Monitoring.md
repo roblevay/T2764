@@ -40,7 +40,7 @@ SET Lastname='Jones' WHERE BusinessEntityID=1
 SELECT * FROM Adventureworks.person.person
 ```
 
-Now run the tool:
+Now run the tool in Windows 1:
 
 ```sql
 EXEC dbo.sp_WhoIsActive
