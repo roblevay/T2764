@@ -16,10 +16,9 @@ This guide explains how to download and use the following diagnostic tools in SQ
 **URL:** [https://github.com/amachanic/sp_whoisactive](https://github.com/amachanic/sp_whoisactive)
 
 **Installation:**
-```sql
--- Download the script from GitHub and execute it in SSMS:
-:r https://raw.githubusercontent.com/amachanic/sp_whoisactive/master/who_is_active.sql
-```
+Open the file sp_WhoIsActive.sql
+
+Copy the content and run the file in sql server
 
 ### 2. sp_PressureDetector
 **Author:** Erik Darling  
