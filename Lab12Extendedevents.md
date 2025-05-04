@@ -96,6 +96,7 @@ Log only actual deadlocks.
 
 #### 1. Create test table
 ```sql
+USE tempdb
 DROP TABLE IF EXISTS DeadlockTest;
 CREATE TABLE DeadlockTest (
     ID INT PRIMARY KEY,
@@ -113,6 +114,7 @@ VALUES (1, 'First'), (2, 'Second');
 ### 🪩 Session A
 
 ```sql
+USE Tempdb
 BEGIN TRAN;
 UPDATE DeadlockTest SET Value = 'A1' WHERE ID = 1;
 -- Wait here to simulate overlap
@@ -126,6 +128,7 @@ COMMIT;
 ### 🪩 Session B
 
 ```sql
+USE Tempdb
 BEGIN TRAN;
 UPDATE DeadlockTest SET Value = 'B1' WHERE ID = 2;
 -- Wait to collide with A
