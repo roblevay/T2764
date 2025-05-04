@@ -1,0 +1,77 @@
+
+# SQL Server Diagnostic Tools Guide
+
+This guide explains how to download and use the following diagnostic tools in SQL Server:
+
+- `sp_WhoIsActive`
+- `sp_PressureDetector`
+- `sp_HumanEvents`
+
+---
+
+## 📥 Download and Installation
+
+### 1. sp_WhoIsActive
+**Author:** Adam Machanic  
+**URL:** [https://github.com/amachanic/sp_whoisactive](https://github.com/amachanic/sp_whoisactive)
+
+**Installation:**
+```sql
+-- Download the script from GitHub and execute it in SSMS:
+:r https://raw.githubusercontent.com/amachanic/sp_whoisactive/master/who_is_active.sql
+```
+
+### 2. sp_PressureDetector
+**Author:** Erik Darling  
+**URL:** [https://github.com/erikdarlingdata/DarlingData](https://github.com/erikdarlingdata/DarlingData)
+
+**Installation:**
+```sql
+-- Navigate to the GitHub repo and download the install script from /sp_PressureDetector/
+:r https://raw.githubusercontent.com/ErikEJ/SQL-Server-Tools/master/sp_PressureDetector.sql
+```
+
+### 3. sp_HumanEvents
+**Author:** Erik Darling  
+**URL:** [https://github.com/erikdarlingdata/DarlingData](https://github.com/erikdarlingdata/DarlingData)
+
+**Installation:**
+```sql
+-- Navigate to the GitHub repo and download the install script from /sp_HumanEvents/
+:r https://raw.githubusercontent.com/ErikEJ/SQL-Server-Tools/master/sp_HumanEvents.sql
+```
+
+---
+
+## 🧪 How to Use Them
+
+### ✅ sp_WhoIsActive
+Returns a live snapshot of currently executing queries.
+
+```sql
+EXEC sp_WhoIsActive;
+-- Optional parameters:
+EXEC sp_WhoIsActive @get_plans = 1, @get_locks = 1;
+```
+
+### ✅ sp_PressureDetector
+Identifies bottlenecks in SQL Server, focusing on wait stats and system-level stress.
+
+```sql
+EXEC sp_PressureDetector;
+```
+
+### ✅ sp_HumanEvents
+Wraps around Extended Events and simplifies real-time session troubleshooting.
+
+```sql
+EXEC sp_HumanEvents @event_type = 'rpc_completed';
+-- Can also trace waits, statements, login/logout events etc.
+```
+
+---
+
+## 🧠 Tips
+
+- Always run these tools from a DBA or admin database to avoid cluttering production user databases.
+- Use SQL Agent Jobs or custom dashboards to automate regular execution and logging of results.
