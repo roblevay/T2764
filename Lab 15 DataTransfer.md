@@ -6,22 +6,56 @@
 
 1. In SQL Server Management Studio (SSMS), right-click the **AdventureWorks** database.
 2. Select **Tasks > Export Data**.
-3. Choose the data source as **SQL Server Native Client 11.0 ** and the server name North and click **Next**
-4. Set the destination to **Flat File Destination**.
-5. Save the file as `c:\Data\PersonData.txt`.
-6. Complete the wizard to export the data.
+3. Choose the data source as **SQL Server Native Client 11.0** and the server name **North** and the database **Adventureworks** and click **Next**
+4. Set the destination to **Flat File Destination** and the file name `c:\data\persondata.txt` and click **Next**
+5. Select **Write a query to specify the data transfer** and click **Next**
+6. Type `SELECT BusinessEntityID, FirstName , LastName FROM Person.Person` and click **Next**
+7. In the **Configure Flat File Destination** click **Preview** and then  **OK**. Click **Next**
+8. In **Save and Run Package**, select  **Run immediately** and **Save SSIS Package** and **File System**. Click **Next** 
+9. Save the package as `PersonExport` and the file name `c:\data\PersonExport.dtsx`
+10. Click **Finish** and then **Close**
+11. Check the folder **C:\Data** It should contain a package and a text file. Open the text file and verify that it is correct
 
-Now, import the data back:
-
-1. Right-click the **AdventureWorks** database and choose **Tasks > Import Data**.
-2. Set the source to the flat file `:\Data\PersonData.txt`.
-3. Choose **AdventureWorks** as the destination.
-4. Specify a new table name (e.g., `PersonCopy`).
-5. Run the wizard to create and populate the new table.
 
 ---
 
-## Exercise 2: Use BULK INSERT to Load Data
+## Exercise 2: Export with BCP and Import with BULK INSERT
+
+1.Create a table to insert data to
+
+```sql
+CREATE TABLE Adventureworks.dbo.PersonCopy
+(
+BusinessEntityID    INT
+,FirstName VARCHAR(50)
+,LastName VARCHAR(50)
+)
+```
+
+2. Use `bcp` to export a table to a file (run from Command Prompt):
+
+```bash
+bcp AdventureWorks.dbo.PersonCopy out C:\Path\To\PersonBcp.txt -c -t, -T -S localhost
+```
+
+3. Empty the `PersonCopy` table:
+
+```sql
+TRUNCATE TABLE PersonCopy;
+```
+
+4. Use `BULK INSERT` to load the data:
+
+```sql
+BULK INSERT PersonCopy
+FROM 'C:\Path\To\PersonBcp.txt'
+WITH (
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n'
+);
+```
+
+## Exercise 3: Use BULK INSERT to Load Data
 
 1. Empty the `PersonCopy` table:
 
@@ -43,30 +77,7 @@ WITH (
 
 ---
 
-## Exercise 3: Export with BCP and Import with BULK INSERT
 
-1. Use `bcp` to export a table to a file (run from Command Prompt):
-
-```bash
-bcp AdventureWorks.dbo.PersonCopy out C:\Path\To\PersonBcp.txt -c -t, -T -S localhost
-```
-
-2. Empty the `PersonCopy` table:
-
-```sql
-TRUNCATE TABLE PersonCopy;
-```
-
-3. Use `BULK INSERT` to load the data:
-
-```sql
-BULK INSERT PersonCopy
-FROM 'C:\Path\To\PersonBcp.txt'
-WITH (
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n'
-);
-```
 
 ---
 
