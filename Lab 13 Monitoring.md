@@ -81,8 +81,18 @@ EXECUTE sp_PressureDetector
 To run sp_HumanEvents:
 
 ```sql
-EXECUTE sp_humanevents
+--In window 1
+USE Adventureworks
+EXEC dbo.sp_HumanEvents @event_type = 'query', @query_duration_ms = 1, @seconds_sample = 20, @database_name = 'AdventureWorks';
 ```
+
+
+```sql
+--In window 2, while the query in window 1 is running
+USE Adventureworks
+SELECT * FROM person.personSELEC
+```
+Return to window 1. The query will have been captured since it took more than 1 ms
 
 ---
 
