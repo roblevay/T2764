@@ -66,12 +66,17 @@ WITH (
     FIRSTROW = 2
 );
 ```
+3.Check the table contents
+
+```sql
+SELECT * FROM AdventureWorks.dbo.PersonCopy
+```
 
 ---
 
 
 
----
+
 
 ## Exercise 4: Query a Flat File Using OPENQUERY
 
