@@ -1,4 +1,4 @@
-# SQL Server Data Transfer Exercises (English Version)
+# SQL Server Data Transfer Exercises
 
 ## Preparation: Create a folder called C:\Data
 
