@@ -46,53 +46,46 @@ Now run the tool in Windows 1:
 EXEC dbo.sp_WhoIsActive
 ```
 
+Do not forget to rollback the transaction:
+```sql
+--Windows 1
+ROLLBACK TRAN
+```
+
 ### 2. sp_PressureDetector
 **Author:** Erik Darling  
 **URL:** [https://github.com/erikdarlingdata/DarlingData](https://github.com/erikdarlingdata/DarlingData)
 
 **Installation:**
+
+1. Open the folder sp_PressureDetector and then open the file sp_PressureDetector.sql
+2. Copy the content of the file and paste it in ssms
+3. Run the file
+
+To run sp_PressureDetector:
+
 ```sql
--- Navigate to the GitHub repo and download the install script from /sp_PressureDetector/
-:r https://raw.githubusercontent.com/ErikEJ/SQL-Server-Tools/master/sp_PressureDetector.sql
+EXECUTE sp_PressureDetector
 ```
+
 
 ### 3. sp_HumanEvents
 **Author:** Erik Darling  
 **URL:** [https://github.com/erikdarlingdata/DarlingData](https://github.com/erikdarlingdata/DarlingData)
 
 **Installation:**
+
+1. Navigate to the GitHub repo and download the install script from /sp_HumanEvents/
+2. Run the file
+
+To run sp_HumanEvents:
+
 ```sql
--- Navigate to the GitHub repo and download the install script from /sp_HumanEvents/
-:r https://raw.githubusercontent.com/ErikEJ/SQL-Server-Tools/master/sp_HumanEvents.sql
+EXECUTE sp_humanevents
 ```
 
 ---
 
-## 🧪 How to Use Them
-
-### ✅ sp_WhoIsActive
-Returns a live snapshot of currently executing queries.
-
-```sql
-EXEC sp_WhoIsActive;
--- Optional parameters:
-EXEC sp_WhoIsActive @get_plans = 1, @get_locks = 1;
-```
-
-### ✅ sp_PressureDetector
-Identifies bottlenecks in SQL Server, focusing on wait stats and system-level stress.
-
-```sql
-EXEC sp_PressureDetector;
-```
-
-### ✅ sp_HumanEvents
-Wraps around Extended Events and simplifies real-time session troubleshooting.
-
-```sql
-EXEC sp_HumanEvents @event_type = 'rpc_completed';
--- Can also trace waits, statements, login/logout events etc.
-```
 
 ---
 
