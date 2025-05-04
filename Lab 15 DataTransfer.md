@@ -80,23 +80,24 @@ SELECT * FROM AdventureWorks.dbo.PersonCopy
 
 ## Exercise 4: Query a Flat File Using OPENQUERY
 
-> Note: This requires setting up a linked server to `Microsoft.ACE.OLEDB.12.0` or `Microsoft.Jet.OLEDB.4.0` for text file access.
+1. Create a format file using bcp (run from command prompt):
 
-1. Create a linked server to a folder containing the text file:
+ ```bash
+bcp adventureworks.dbo.Personcopy format nul -c -x -f "c:\data\personcopy.fmt"  -T
+```
 
-```sql
-EXEC sp_addlinkedserver
-    @server = 'TextFileServer',
-    @srvproduct = 'Jet 4.0',
-    @provider = 'Microsoft.Jet.OLEDB.4.0',
-    @datasrc = 'C:\Path\To',
-    @provstr = 'Text;FMT=Delimited';
+Check for the existence of `c:\data\personcopy.fmt`
+
+
 ```
 
 2. Query the text file as if it were a table:
 
 ```sql
-SELECT *
-FROM OPENQUERY(TextFileServer, 'SELECT * FROM PersonData.txt');
+SELECT Firstname,lastname
+FROM OPENROWSET(
+  BULK 'c:\data\Persondata.txt',
+  FORMATFILE='c:\data\personcopy.fmt'
+) AS t;
 ```
 
