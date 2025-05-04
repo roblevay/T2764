@@ -29,13 +29,15 @@ Track queries that take longer than 5 seconds to execute.
 
 ### ✅ Verification:
 
-1. Run this query in another SSMS window:
+1. Right-click your session > **Watch Live Data**.
+2. Run this query in another SSMS window:
 
    ```sql
    WAITFOR DELAY '00:00:06';
    ```
-2. Go back to your XE session, right-click > **Watch Live Data**.
+
 3. Confirm the event appears in the live data view.
+4. Stop the extended events session
 
 ---
 
