@@ -28,7 +28,7 @@ Track queries that take longer than 5 seconds to execute.
      * Field: `duration`
      * Operator: `>`
      * Value: `5000000`
-   * In **Fields**, deselect everything you don’t need — keep `sql_text`, `duration`, `database_id` etc.
+   * In **Global Fields(Actions)**, select  `sql_text`, `database_name`, `client_app_name` 
 6. Go to **Data Storage** page:
 
    * Click **Add** > Choose `event_file`
@@ -44,7 +44,7 @@ Track queries that take longer than 5 seconds to execute.
    WAITFOR DELAY '00:00:06';
    ```
 2. Right-click the session > **Watch Live Data**.
-3. Confirm event shows with duration > 5000000 µs.
+3. Confirm event shows with duration > 5000000 µs, that is more than 5 seconds
 
 ---
 
