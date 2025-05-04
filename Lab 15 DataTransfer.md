@@ -35,7 +35,7 @@ BusinessEntityID    INT
 2. Use `bcp` to export a table to a file (run from Command Prompt):
 
 ```bash
-bcp AdventureWorks.dbo.PersonCopy out C:\Path\To\PersonBcp.txt -c -t, -T -S localhost
+bcp AdventureWorks.dbo.PersonCopy out C:\Data\PersonBcp.txt -c -t, -T -S localhost
 ```
 
 3. Empty the `PersonCopy` table:
