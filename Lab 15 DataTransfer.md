@@ -6,7 +6,7 @@
 
 1. In SQL Server Management Studio (SSMS), right-click the **AdventureWorks** database.
 2. Select **Tasks > Export Data**.
-3. Choose the source as **AdventureWorks** and select a table to export (e.g., `Person.Person`).
+3. Choose the data source as **SQL Server Native Client 11.0 ** and the server name North and click **Next**
 4. Set the destination to **Flat File Destination**.
 5. Save the file as `c:\Data\PersonData.txt`.
 6. Complete the wizard to export the data.
