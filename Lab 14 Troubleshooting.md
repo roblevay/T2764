@@ -28,9 +28,12 @@ sqlcmd -S DESKTOP-UTG2SVO -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"
 sqlcmd -S DESKTOP-UTG2SVO -U olle -P wrongpassword -Q "SELECT GETDATE();"
 ```
 
-All of them should **fail** because the SQL Server service is currently **stopped**.
-
+All of them should **fail** . Why?
 ---
+
+
+
+
 
 ## Step 3: Start the SQL Server Service
 
