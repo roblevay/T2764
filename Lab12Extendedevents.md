@@ -23,7 +23,7 @@ Track queries that take longer than 5 seconds to execute.
    * Search for and select `sql_statement_completed`
    * Click `>`
    * Click **Configure**
-   * In **Predicate (Filter)** tab, add:
+   * In **Filter (Predicate) ** tab, add:
 
      * Field: `duration`
      * Operator: `>`
