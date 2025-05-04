@@ -92,11 +92,7 @@ Log only actual deadlocks.
 
 
 
-````md
-## 🔄 Creating a Deadlock in SQL Server
-
-
-### 🧪 Step-by-step: Simulate a Deadlock
+### 🧪 Test tje session: Simulate a Deadlock
 
 #### 1. Create test table
 ```sql
