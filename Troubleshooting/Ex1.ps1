@@ -1,1 +1,1 @@
-Invoke-Sqlcmd -ServerInstance "localhost" -Username "Student" -Password "wrongpass"
+Invoke-Sqlcmd -ServerInstance "localhost" -Username "sa" -Password "wrongpass"
