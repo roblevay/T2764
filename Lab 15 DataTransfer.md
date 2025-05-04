@@ -1,5 +1,7 @@
 # SQL Server Data Transfer Exercises (English Version)
 
+# Preparation: Create a folder called C:\Data
+
 ## Exercise 1: Export and Import Using the Data Export Wizard
 
 1. In SQL Server Management Studio (SSMS), right-click the **AdventureWorks** database.
