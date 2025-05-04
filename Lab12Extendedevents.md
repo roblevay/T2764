@@ -20,8 +20,8 @@ Track queries that take longer than 5 seconds to execute.
 4. Uncheck **Start session at server startup**.
 5. On the **Events** page:
 
-   * Click **Add Event**
    * Search for and select `sql_statement_completed`
+   * Click `>`
    * Click **Configure**
    * In **Predicate (Filter)** tab, add:
 
