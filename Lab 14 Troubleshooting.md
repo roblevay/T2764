@@ -43,11 +43,7 @@ All of them should **fail** . Why?
 
 ## Step 3: Start the SQL Server Service
 
-Start the service manually or via PowerShell:
-
-```powershell
-Start-Service -Name 'MSSQLSERVER'
-```
+Start the service via Sql Server Configuration Manager
 
 Then run the three `sqlcmd` commands again. They will still fail, but now:
 
