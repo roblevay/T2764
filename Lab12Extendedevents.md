@@ -107,18 +107,19 @@ INSERT INTO DeadlockTest (ID, Value)
 VALUES (1, 'First'), (2, 'Second');
 ````
 
-#### 2. Open **two separate SSMS query windows** — Session A and Session B.
+#### 2. Open **two separate SSMS query windows** — Session A and Session B. Run both queries within 10 seconds
 
 ---
 
 ### 🪩 Session A
 
 ```sql
+--Run this first
 USE Tempdb
 BEGIN TRAN;
 UPDATE DeadlockTest SET Value = 'A1' WHERE ID = 1;
 -- Wait here to simulate overlap
-WAITFOR DELAY '00:00:05';
+WAITFOR DELAY '00:00:10';
 UPDATE DeadlockTest SET Value = 'A2' WHERE ID = 2;
 COMMIT;
 ```
@@ -128,11 +129,12 @@ COMMIT;
 ### 🪩 Session B
 
 ```sql
+--then this
 USE Tempdb
 BEGIN TRAN;
 UPDATE DeadlockTest SET Value = 'B1' WHERE ID = 2;
 -- Wait to collide with A
-WAITFOR DELAY '00:00:05';
+WAITFOR DELAY '00:00:10';
 UPDATE DeadlockTest SET Value = 'B2' WHERE ID = 1;
 COMMIT;
 ```
