@@ -86,7 +86,7 @@ Log only actual deadlocks.
 1. Create new session: `Deadlocks`
 2. Add event: `xml_deadlock_report`
 3. No filter needed.
-4. Optional: Add fields like `database_name`, `sql_text`
+4. Add the fields  `database_name`, `sql_text`
 5. Add `event_file`, e.g. `C:\XELogs\Deadlocks.xel`
 6. Save and start session.
 
