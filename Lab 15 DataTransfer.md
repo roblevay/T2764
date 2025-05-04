@@ -8,13 +8,13 @@
 2. Select **Tasks > Export Data**.
 3. Choose the source as **AdventureWorks** and select a table to export (e.g., `Person.Person`).
 4. Set the destination to **Flat File Destination**.
-5. Save the file as `PersonData.txt`.
+5. Save the file as `c:\Data\PersonData.txt`.
 6. Complete the wizard to export the data.
 
 Now, import the data back:
 
 1. Right-click the **AdventureWorks** database and choose **Tasks > Import Data**.
-2. Set the source to the flat file `PersonData.txt`.
+2. Set the source to the flat file `:\Data\PersonData.txt`.
 3. Choose **AdventureWorks** as the destination.
 4. Specify a new table name (e.g., `PersonCopy`).
 5. Run the wizard to create and populate the new table.
