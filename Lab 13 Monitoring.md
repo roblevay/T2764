@@ -20,6 +20,32 @@ Open the file sp_WhoIsActive.sql
 
 Copy the content and run the file in sql server
 
+To run the tool:
+
+```sql
+EXEC dbo.sp_WhoIsActive
+```
+
+The tool will not show so much when there are no blockings. Try this:
+
+```sql
+--Do this in Window 1
+BEGIN TRAN
+UPDATE Adventureworks.person.person
+SET Lastname='Jones' WHERE BusinessEntityID=1
+```
+
+```sql
+--Do this in Window 2
+SELECT * FROM Adventureworks.person.person
+```
+
+Now run the tool:
+
+```sql
+EXEC dbo.sp_WhoIsActive
+```
+
 ### 2. sp_PressureDetector
 **Author:** Erik Darling  
 **URL:** [https://github.com/erikdarlingdata/DarlingData](https://github.com/erikdarlingdata/DarlingData)
