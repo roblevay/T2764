@@ -105,7 +105,7 @@ Invoke-Sqlcmd -Query "SELECT name FROM sys.database_principals" -ServerInstance 
 To install the SqlServer module, run this in powershell:
 
 ```powershell
-Install-Module -Name SqlServer -Scope CurrentUser -Force 
+Install-Module -Name SqlServer -Scope CurrentUser -Force -AllowClobber
 ```
 You may get different messages, depending on what is alreadt installed. It does not matter for now.
 
