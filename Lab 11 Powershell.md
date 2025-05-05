@@ -126,7 +126,7 @@ To install the SqlServer module, run this in powershell:
 ```powershell
 Install-Module -Name SqlServer -Scope CurrentUser -Force -AllowClobber
 ```
-You may get different messages, depending on what is alreadt installed. It does not matter for now.
+You may get different messages, depending on what is already installed. It does not matter for now.
 
 ## 🧑‍💻 Step 5 – Modify Script Using PowerShell ISE
 
@@ -156,13 +156,13 @@ Get-SqlLogin -ServerInstance "localhost"
 Get-SqlInstance -ServerInstance "localhost"
 
 # Create a database
-Invoke-Sqlcmd -ServerInstance "localhost" -Query "CREATE DATABASE TestDB"
+Invoke-Sqlcmd -ServerInstance "localhost" -Query "CREATE DATABASE TestDB" -TrustServerCertificate
 
 # Delete a database
-Invoke-Sqlcmd -ServerInstance "localhost" -Query "DROP DATABASE TestDB" 
+Invoke-Sqlcmd -ServerInstance "localhost" -Query "DROP DATABASE TestDB" -TrustServerCertificate
 
 # Backup a database
-Backup-SqlDatabase -ServerInstance "localhost" -Database "AdventureWorks" -BackupFile "C:\SqlBackups\AdventureWorks.bak"
+Backup-SqlDatabase -ServerInstance "localhost" -Database "AdventureWorks" -BackupFile "C:\SqlBackups\AdventureWorks.bak" -TrustServerCertificate
 
 ```
 
