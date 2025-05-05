@@ -12,6 +12,26 @@ Learn how to:
 
 ---
 
+
+## 📁 Step 0 – Uninstall and Install the Sqlserver module
+
+1. Open Powershell as administrator
+
+```powershell
+Uninstall-Module -Name SqlServer -AllVersions -Force
+```
+
+and then 
+
+```powershell
+Install-Module -Name SqlServer -Scope CurrentUser -Force -AllowClobber
+```
+
+
+3. 
+4. Create a folder:
+
+
 ## 📁 Step 1 – Create Folder and First Script
 
 1. Open a command prompt or PowerShell.
