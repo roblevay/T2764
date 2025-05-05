@@ -29,9 +29,9 @@ Right-click the file **RunEx1.bat** and select **Run as Administrator**. It will
 Open a **command prompt** (not PowerShell) and run the following commands:
 
 ```cmd
-sqlcmd -S DESKTOP-UTG2SVO -U sa -P wrongpassword -Q "SELECT GETDATE();"
-sqlcmd -S DESKTOP-UTG2SVO -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"
-sqlcmd -S DESKTOP-UTG2SVO -U olle -P wrongpassword -Q "SELECT GETDATE();"
+sqlcmd -S North -U sa -P wrongpassword -Q "SELECT GETDATE();"
+sqlcmd -S North -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"
+sqlcmd -S North -U olle -P wrongpassword -Q "SELECT GETDATE();"
 ```
 
 All of them should **fail** . Why?
@@ -73,7 +73,7 @@ In SSMS or via PowerShell:
 
 ```powershell
 Import-Module SqlServer
-$server = New-Object Microsoft.SqlServer.Management.Smo.Server "DESKTOP-UTG2SVO"
+$server = New-Object Microsoft.SqlServer.Management.Smo.Server "North"
 $server.Settings.LoginMode = [Microsoft.SqlServer.Management.SMO.ServerLoginMode]::Mixed
 $server.Alter()
 Stop-Service -Name 'MSSQLSERVER' -Force
@@ -85,9 +85,9 @@ Start-Service -Name 'MSSQLSERVER'
 ## Step 6: Run the SQLCMD Commands Again
 
 ```cmd
-sqlcmd -S DESKTOP-UTG2SVO -U sa -P wrongpassword -Q "SELECT GETDATE();"     -- still fails
-sqlcmd -S DESKTOP-UTG2SVO -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"       -- should now succeed
-sqlcmd -S DESKTOP-UTG2SVO -U olle -P wrongpassword -Q "SELECT GETDATE();"   -- still fails
+sqlcmd -S North -U sa -P wrongpassword -Q "SELECT GETDATE();"     -- still fails
+sqlcmd -S North -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"       -- should now succeed
+sqlcmd -S North -U olle -P wrongpassword -Q "SELECT GETDATE();"   -- still fails
 ```
 
 ---
