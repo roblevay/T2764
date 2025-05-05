@@ -54,7 +54,7 @@ notepad C:\Pshell\ShowDatabases.ps1
 2. Paste this basic SQL discovery script:
 
 ```powershell
-Install-Module -Name SqlServer -Scope CurrentUser -Force
+Install-Module -Name SqlServer -Scope CurrentUser -Force -AllowClobber
 Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost" 
 ```
 
