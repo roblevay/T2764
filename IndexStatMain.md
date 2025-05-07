@@ -198,7 +198,7 @@ Create three separate maintenance plans in SQL Server using SQL Server Managemen
    - Folder: Same as used in the backup plan (`C:\SQLBackups`)
    - File extension: `.bak`
    - File age: Delete files older than 7 days
-3. Add another **Maintenance Cleanup Task**:
+3. Add another **History Cleanup Task**:
    - Delete: Maintenance Plan history
    - File age: Older than 30 days
 4. Schedule:
