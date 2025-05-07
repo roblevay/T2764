@@ -36,7 +36,7 @@ WITH INIT;
 
 Edit the job step 
 Click Advanced
-At output file, type D:\DemoDatabases\$(ESCAPE_NONE(MACHINENAME))_$(ESCAPE_NONE(JOBNAME))_$(ESCAPE_NONE(STRTDT)).txt
+At output file, type D:\DemoDatabases\\$(ESCAPE_NONE(MACHINENAME))_$(ESCAPE_NONE(JOBNAME))_$(ESCAPE_NONE(STRTDT)).txt
 
 
 
