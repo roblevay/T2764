@@ -1,6 +1,9 @@
 
 # 🧪 SQL Server Agent Jobs – Creating, Scripting, and Using Tokens
 
+## Start
+Create a folder called c:\DemoDatabases
+
 ## 🎯 Objectives
 
 1. Create a backup job on server `North`.
