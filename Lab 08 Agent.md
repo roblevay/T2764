@@ -39,7 +39,7 @@ WITH INIT;
 
 Edit the job step 
 Click Advanced
-At output file, type D:\DemoDatabases\\$(ESCAPE_NONE(MACHINENAME))_$(ESCAPE_NONE(JOBNAME))_$(ESCAPE_NONE(STRTDT)).txt
+At output file, type C:\DemoDatabases\\$(ESCAPE_NONE(MACHINENAME))_$(ESCAPE_NONE(JOBNAME))_$(ESCAPE_NONE(STRTDT)).txt
 
 
 
@@ -47,7 +47,7 @@ At output file, type D:\DemoDatabases\\$(ESCAPE_NONE(MACHINENAME))_$(ESCAPE_NONE
 
 ---
 
-## 📄 Step 3 – Script the Job and Deploy to `North\A`
+## 📄 Step 3 – Script the Job and Deploy to `North\A` (If it exists, otherwise on the same server)
 
 1. In SSMS, right-click the job `Backup Adventureworks`.
 2. Choose **Script Job as > CREATE To > New Query Editor Window**.
