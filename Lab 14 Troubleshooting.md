@@ -27,7 +27,7 @@ Troubleshooting/Ex1.ps1
 Open a **command prompt** (not PowerShell) and run the following commands:
 
 ```cmd
-sqlcmd -S localhost -U sa -P wrongpassword -Q "SELECT GETDATE();"
+sqlcmd -S localhost  -Q "SELECT GETDATE();"
 sqlcmd -S localhost -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"
 sqlcmd -S localhost -U olle -P wrongpassword -Q "SELECT GETDATE();"
 
@@ -44,7 +44,7 @@ All of them should **fail** . Why?
 
 Start the service via Sql Server Configuration Manager
 
-Then run the three `sqlcmd` commands again. They will still fail, but now:
+Then run the three `sqlcmd` commands again. Two of them still fail, but now:
 
 * You can check the **SQL Server Error Log** for failed login messages.
 
@@ -60,10 +60,9 @@ EXEC xp_readerrorlog 0, 1, N'Login failed';
 
 You should see:
 
-* Failure for `sa`: wrong password
+* The first is successful
 * Failure for `Sqltom`: even though password is correct, login fails due to **login mode**
-* Failure for `olle`: login does not exist
-
+* Failure for `olle`: even though password is correct, login fails due to **login mode**
 ---
 
 ## Step 5: Enable Mixed Authentication Mode
