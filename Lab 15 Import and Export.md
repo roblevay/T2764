@@ -92,13 +92,13 @@ SELECT Businessentityid,firstname,lastname INTO Adventureworks.dbo.nyapersoner F
 bcp "SELECT * FROM [Adventureworks].[dbo].[nyapersoner]" queryout "c:\data\nyapersoner.txt" -c -T
 ```
 
-3. Create a format file using bcp
+3. In a command prompt, create a format file using bcp
    
  ```bash
 bcp adventureworks.dbo.nyapersoner format nul -c -x -f "c:\data\nyapersoner.fmt" -S localhost -T
 ```
 
-4. Use OPENROWSET to read from the text file
+4. In SSMS, use OPENROWSET to read from the text file
 
 ```sql
 SELECT Firstname,lastname
