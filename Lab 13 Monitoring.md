@@ -29,12 +29,27 @@ This guide explains how to download and use the following diagnostic tools in SQ
 
 ```sql
 -- Find top cached SPs by average CPU time
-SELECT TOP(25) p.name AS [SP Name], qs.total_worker_time/qs.execution_count AS [AvgCPU], 
-qs.execution_count, qs.total_worker_time, qs.creation_time, qs.last_execution_time  
+SELECT TOP(25) 
+    p.name AS [SP Name], 
+    qs.total_worker_time / qs.execution_count AS [AvgCPU], 
+    qs.execution_count, 
+    qs.total_worker_time, 
+    qs.last_execution_time
 FROM sys.procedures AS p  
 INNER JOIN sys.dm_exec_procedure_stats AS qs  
-ON p.[object_id] = qs.[object_id]  
-ORDER BY AvgCPU DESC;
+    ON p.[object_id] = qs.[object_id]  
+ORDER BY [AvgCPU] DESC;
+SELECT TOP(25) 
+    p.name AS [SP Name], 
+    qs.total_worker_time / qs.execution_count AS [AvgCPU], 
+    qs.execution_count, 
+    qs.total_worker_time, 
+    qs.last_execution_time
+FROM sys.procedures AS p  
+INNER JOIN sys.dm_exec_procedure_stats AS qs  
+    ON p.[object_id] = qs.[object_id]  
+ORDER BY [AvgCPU] DESC;
+
 ```
 
 * Testa att belasta servern lite (t.ex. med en loopad SELECT eller JOIN) och kör scriptet igen för att se hur statistik förändras.
