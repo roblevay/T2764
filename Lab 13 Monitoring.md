@@ -48,8 +48,8 @@ ORDER BY AvgCPU DESC;
 
 **Installation:**
 
-1. Ladda ner projektet från GitHub (du kan klicka på den gröna "Code"-knappen och välja "Download ZIP").
-2. Extrahera ZIP-filen och öppna `Install-All-Scripts.sql` i SSMS.
+1. Klicka på sp_blitz
+2. Klicka på Raw
 3. Kör scriptet för att installera sp\_Blitz och relaterade verktyg.
 
 För att köra sp\_Blitz:
