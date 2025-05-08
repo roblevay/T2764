@@ -49,8 +49,8 @@ ORDER BY AvgCPU DESC;
 **Installation:**
 
 1. Klicka på sp_blitz
-2. Klicka på Raw
-3. Kör scriptet för att installera sp\_Blitz och relaterade verktyg.
+2. Klicka på Copy raw file
+3. Klistra in scriptet i ssms och kör det.
 
 För att köra sp\_Blitz:
 
