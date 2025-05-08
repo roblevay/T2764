@@ -18,7 +18,7 @@ You will create a blocking situation, find more information about it and then de
 * Open 3 query windows in the Adventureworks database. Let’s call them QW1, QW2 and QW3.
 * You will work with the Person.Person table.
 
-### In QW1
+### In Query Window 1
 
 * Start a transaction
 * Update BusinessEntityID = 1, and set FirstName = 'Kenneth'
@@ -32,7 +32,7 @@ WHERE BusinessEntityID = 1;
 -- Don't commit or rollback yet
 ```
 
-### In QW2 and QW3 (do the same in both)
+### In Query Window 2 and 3 (do the same in both)
 
 ```sql
 SELECT * FROM Person.Person;
