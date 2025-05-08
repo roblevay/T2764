@@ -83,7 +83,7 @@ Start-Service -Name 'MSSQLSERVER'
 ## Step 6: Run the SQLCMD Commands Again
 
 ```cmd
-sqlcmd -S localhost -U sa -P wrongpassword -Q "SELECT GETDATE();"     -- still fails
+sqlcmd -S localhost  -Q "SELECT GETDATE();"    -- still works
 sqlcmd -S localhost -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"       -- should now succeed
 sqlcmd -S localhost -U olle -P wrongpassword -Q "SELECT GETDATE();"   -- still fails
 
