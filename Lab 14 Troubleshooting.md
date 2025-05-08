@@ -6,21 +6,19 @@ To understand how login failures are handled in SQL Server, how to inspect the e
 
 ---
 
+## Step 0
+
+Verify that your sql server is configured with mixed authentication (Windows and SQL Server)
+
 ## Step 1: Download and Run the PowerShell Script
 
-Download and execute the PowerShell file:
+Download and execute the PowerShell file as administrator:
 
 ```
 Troubleshooting/Ex1.ps1
 ```
 
-And the bat file
 
-```
-Troubleshooting/RunEx1.bat
-```
-
-Right-click the file **RunEx1.bat** and select **Run as Administrator**. It will create some trouble...
 
 ---
 
