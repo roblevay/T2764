@@ -15,7 +15,7 @@ This guide explains how to download and use the following diagnostic tools in SQ
 ### 1. Glenn Berry's Diagnostic Queries
 
 **Author:** Glenn Berry
-**URL:** [https://github.com/GlennBerry/SQL-Server-Diagnostic-Queries](https://github.com/GlennBerry/SQL-Server-Diagnostic-Queries)
+**URL:** [https://glennsqlperformance.com/resources/](https://glennsqlperformance.com/resources/)
 
 **Installation / Usage:**
 
