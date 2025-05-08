@@ -109,3 +109,10 @@ FROM OPENROWSET(
 ```
 
 
+5. Delete the tables created
+   
+```sql
+drop table dbo.nyapersoner
+drop table dbo.PersonCopy
+```
+
