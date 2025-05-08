@@ -6,7 +6,7 @@
 
 1. In SQL Server Management Studio (SSMS), right-click the **AdventureWorks** database.
 2. Select **Tasks > Export Data**.
-3. Choose the data source as **.Net Framework Data Provider for SqlServer** and the server name **localhost** and the database **Adventureworks** and click **Next**
+3. Choose the data source as **Microsoft OLE DB Provider for SQL Server** and the server name **localhost** and the database **Adventureworks** and click **Next**
 4. Set the destination to **Flat File Destination** and the file name `c:\data\persondata.txt` and click **Next**
 5. Select **Write a query to specify the data transfer** and click **Next**
 6. Type `SELECT BusinessEntityID, FirstName , LastName FROM Person.Person` and click **Next**
