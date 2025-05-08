@@ -29,7 +29,7 @@ Open a **command prompt** (not PowerShell) and run the following commands:
 ```cmd
 sqlcmd -S localhost  -Q "SELECT GETDATE();"
 sqlcmd -S localhost -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"
-sqlcmd -S localhost -U olle -P wrongpassword -Q "SELECT GETDATE();"
+sqlcmd -S localhost -U olle -PmyS3cret -Q "SELECT GETDATE();"
 
 ```
 
