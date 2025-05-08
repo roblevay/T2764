@@ -29,9 +29,10 @@ Right-click the file **RunEx1.bat** and select **Run as Administrator**. It will
 Open a **command prompt** (not PowerShell) and run the following commands:
 
 ```cmd
-sqlcmd -S North -U sa -P wrongpassword -Q "SELECT GETDATE();"
-sqlcmd -S North -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"
-sqlcmd -S North -U olle -P wrongpassword -Q "SELECT GETDATE();"
+sqlcmd -S localhost -U sa -P wrongpassword -Q "SELECT GETDATE();"
+sqlcmd -S localhost -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"
+sqlcmd -S localhost -U olle -P wrongpassword -Q "SELECT GETDATE();"
+
 ```
 
 All of them should **fail** . Why?
@@ -85,9 +86,10 @@ Start-Service -Name 'MSSQLSERVER'
 ## Step 6: Run the SQLCMD Commands Again
 
 ```cmd
-sqlcmd -S North -U sa -P wrongpassword -Q "SELECT GETDATE();"     -- still fails
-sqlcmd -S North -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"       -- should now succeed
-sqlcmd -S North -U olle -P wrongpassword -Q "SELECT GETDATE();"   -- still fails
+sqlcmd -S localhost -U sa -P wrongpassword -Q "SELECT GETDATE();"     -- still fails
+sqlcmd -S localhost -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"       -- should now succeed
+sqlcmd -S localhost -U olle -P wrongpassword -Q "SELECT GETDATE();"   -- still fails
+
 ```
 
 ---
