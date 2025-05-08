@@ -21,7 +21,7 @@
 
 ## Exercise 2: Export with BCP and Import with BULK INSERT
 
-1.Create a table to insert data to
+1. In SSMS, Create a table to insert data to
 
 ```sql
 CREATE TABLE Adventureworks.dbo.PersonCopy
