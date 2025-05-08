@@ -38,7 +38,7 @@ BusinessEntityID    INT
 bcp AdventureWorks.dbo.PersonCopy in C:\Data\Persondata.txt -c -t, -T -S localhost
 ```
 
-3.Check the table contents
+3. In SSMS, Check the table contents
 
 ```sql
 SELECT * FROM AdventureWorks.dbo.PersonCopy
