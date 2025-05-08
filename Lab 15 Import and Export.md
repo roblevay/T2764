@@ -95,7 +95,7 @@ bcp "SELECT * FROM [Adventureworks].[dbo].[nyapersoner]" queryout "c:\data\nyape
 3. Create a format file using bcp
    
  ```bash
-bcp adventureworks2017.dbo.nyapersoner format nul -c -x -f "c:\data\nyapersoner.fmt" -S localhost -T
+bcp adventureworks.dbo.nyapersoner format nul -c -x -f "c:\data\nyapersoner.fmt" -S localhost -T
 ```
 
 4. Use OPENROWSET to read from the text file
