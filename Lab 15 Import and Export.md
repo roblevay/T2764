@@ -83,7 +83,7 @@ SELECT * FROM AdventureWorks.dbo.PersonCopy
 1. Create a new table to use (this is done to avoid problems with column types)
 
 ```sql
-SELECT Businessentityid,firstname,lastname INTO nyapersoner FROM Adventureworks.person.person
+SELECT Businessentityid,firstname,lastname INTO Adventureworks.dbo.nyapersoner FROM Adventureworks.person.person
 ```
 
 2. Create a text file called nyapersoner.txt to be used
