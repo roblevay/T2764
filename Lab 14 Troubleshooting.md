@@ -83,10 +83,15 @@ Start-Service -Name 'MSSQLSERVER'
 ## Step 6: Run the SQLCMD Commands Again
 
 ```cmd
-sqlcmd -S localhost  -Q "SELECT GETDATE();"    -- still works
-sqlcmd -S localhost -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"       -- should now succeed
-sqlcmd -S localhost -U olle -P wrongpassword -Q "SELECT GETDATE();"   -- still fails
+sqlcmd -S localhost  -Q "SELECT GETDATE();"   
+sqlcmd -S localhost -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"      
+sqlcmd -S localhost -U olle -P wrongpassword -Q "SELECT GETDATE();"   
 
+```
+The two first should work but not the third. Why?
+
+```sql
+EXEC xp_readerrorlog 0, 1, N'Login failed';
 ```
 
 ---
