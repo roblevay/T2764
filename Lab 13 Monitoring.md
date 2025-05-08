@@ -85,6 +85,16 @@ EXEC sp_Blitz @CheckServerInfo = 0, @OutputType = 'TABLE';
 ```
 
 
+```sql
+--Skapa en databas och sätt auto_shrink
+CREATE DATABASE shrinkdb
+GO
+ALTER DATABASE shrinkdb SET AUTO_SHRINK ON;
+EXEC sp_blitz
+
+```
+Du ska få ett fel av allvarlighetsgrad 10
+
 ---
 
 ### 3. sp\_WhoIsActive
