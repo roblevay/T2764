@@ -109,9 +109,10 @@ C:\Pshell\ShowDatabases.ps1
 ```powershell
 # Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost" 
 
-Invoke-Sqlcmd -Query "SELECT name FROM sysjobs" -ServerInstance "localhost" -Database msdb  | Tee-Object -FilePath C:\Pshell\Jobs.csv
-Invoke-Sqlcmd -Query "SELECT name FROM sys.server_principals" -ServerInstance "localhost"  | Tee-Object -FilePath C:\Pshell\Logins.csv
-Invoke-Sqlcmd -Query "SELECT name FROM sys.database_principals" -ServerInstance "localhost" -Database msdb  | Tee-Object -FilePath C:\Pshell\MsdbUsers.csv
+Invoke-Sqlcmd -Query "SELECT name FROM sysjobs" -ServerInstance "localhost" -Database msdb -TrustServerCertificate | Tee-Object -FilePath C:\Pshell\Jobs.csv
+Invoke-Sqlcmd -Query "SELECT name FROM sys.server_principals" -ServerInstance "localhost" -TrustServerCertificate | Tee-Object -FilePath C:\Pshell\Logins.csv
+Invoke-Sqlcmd -Query "SELECT name FROM sys.database_principals" -ServerInstance "localhost" -Database msdb -TrustServerCertificate | Tee-Object -FilePath C:\Pshell\MsdbUsers.csv
+
 
 ```
 
