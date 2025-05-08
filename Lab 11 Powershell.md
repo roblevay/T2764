@@ -74,7 +74,7 @@ notepad C:\Pshell\ShowDatabases.ps1
 2. Paste this basic SQL discovery script:
 
 ```powershell
-Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost" 
+Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost" -TrustServerCertificate
 ```
 
 3. Save and close.
