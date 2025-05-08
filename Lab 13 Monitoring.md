@@ -46,7 +46,7 @@ SELECT * FROM Person.Person;
 * You can also select from `sys.dm_tran_locks` (note: lots of rows, most from XML-related objects)
 * Terminate the session which is the root cause
 * Verify that QW2 and QW3 now receive data
-* Optionally download `sp_whoisactive` and try it out
+* Optionally download `sp_whoisactive` (below) and try it out
 * Close all query windows
 
 ---
