@@ -80,13 +80,13 @@ SELECT * FROM AdventureWorks.dbo.PersonCopy
 
 ## Exercise 4: Query a Flat File Using OPENQUERY
 
-1. Create a new table to use (this is done to avoid problems with column types)
+1. In SSMS, Create a new table to use (this is done to avoid problems with column types)
 
 ```sql
 SELECT Businessentityid,firstname,lastname INTO Adventureworks.dbo.nyapersoner FROM Adventureworks.person.person
 ```
 
-2. Create a text file called nyapersoner.txt to be used
+2. In a command prompt, create a text file called nyapersoner.txt to be used
 
  ```bash
 bcp "SELECT * FROM [Adventureworks].[dbo].[nyapersoner]" queryout "c:\data\nyapersoner.txt" -c -T
