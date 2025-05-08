@@ -94,13 +94,24 @@ The two first should work but not the third. Why?
 EXEC xp_readerrorlog 0, 1, N'Login failed';
 ```
 
+Examine the login olle in SSMS. Notice that the account is disabled. Enable the account olle.
 ---
+
+## Step 7: Run the SQLCMD Commands Again
+
+```cmd
+sqlcmd -S localhost  -Q "SELECT GETDATE();"   
+sqlcmd -S localhost -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"      
+sqlcmd -S localhost -U olle -P wrongpassword -Q "SELECT GETDATE();"   
+```
+
+They should all work now!
 
 ## Conclusion
 
-* `sa` fails due to **invalid password**.
-* `Sqltom` now works because **Mixed Mode** is enabled.
-* `olle` fails because the login does **not exist**.
+* sqlcmd -S localhost  -Q "SELECT GETDATE();" first fails because the sql server service is stopped
+* `Sqltom` first fails because **Mixed Mode** is not enabled
+* `olle` fails because the account is disabled.
 
 You have now verified how SQL Server handles login attempts, where to check logs, and how to change the authentication mode.
 
