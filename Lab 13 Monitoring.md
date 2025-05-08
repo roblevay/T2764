@@ -84,16 +84,6 @@ EXEC sp_Blitz;
 EXEC sp_Blitz @CheckServerInfo = 0, @OutputType = 'TABLE';
 ```
 
-* Skapa ett temporärt test-scenario:
-
-```sql
--- Skapa en table utan PK och sätt in lite data
-CREATE TABLE dbo.TempBlitzTest (Id INT, Name NVARCHAR(50))
-INSERT INTO dbo.TempBlitzTest VALUES (1, 'Test')
-
--- Kör sp_Blitz och notera varningen om saknad PK
-EXEC sp_Blitz
-```
 
 ---
 
