@@ -85,7 +85,7 @@ Start-Service -Name 'MSSQLSERVER'
 ```cmd
 sqlcmd -S localhost  -Q "SELECT GETDATE();"   
 sqlcmd -S localhost -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"      
-sqlcmd -S localhost -U olle -P wrongpassword -Q "SELECT GETDATE();"   
+sqlcmd -S localhost -U olle -PmyS3cret -Q "SELECT GETDATE();"   
 
 ```
 The two first should work but not the third. Why?
@@ -102,7 +102,7 @@ Examine the login olle in SSMS. Notice that the account is disabled. Enable the 
 ```cmd
 sqlcmd -S localhost  -Q "SELECT GETDATE();"   
 sqlcmd -S localhost -U Sqltom -PmyS3cret -Q "SELECT GETDATE();"      
-sqlcmd -S localhost -U olle -P wrongpassword -Q "SELECT GETDATE();"   
+sqlcmd -S localhost -U olle -PmyS3cret -Q "SELECT GETDATE();"   
 ```
 
 They should all work now!
