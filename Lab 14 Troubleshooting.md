@@ -67,7 +67,7 @@ You should see:
 
 ## Step 5: Enable Mixed Authentication Mode
 
-In SSMS or via PowerShell:
+Change it to mixed authentication in SSMS (don't forget to restart the sql server service) or via this PowerShell script:
 
 ```powershell
 Import-Module SqlServer
