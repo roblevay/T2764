@@ -116,7 +116,7 @@ USE shrinkdb;
 EXEC sp_Blitz;
 ```
 
-* You should see a Priority 240 warning for "Auto Shrink is Enabled"
+* You should see a Priority 10 warning for "Auto Shrink is Enabled"
 
 ---
 
