@@ -12,6 +12,8 @@ This guide walks you through creating and verifying **3 different Extended Event
 
 Track queries that take longer than 5 seconds to execute.
 
+If the folder C:\XELogs does not exist, create it!
+
 ### 🛠️ Steps:
 
 1. In SSMS, go to `Management > Extended Events > Sessions`.
