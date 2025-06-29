@@ -124,7 +124,7 @@ Invoke-Sqlcmd -Query "SELECT name FROM sys.database_principals" -ServerInstance 
 
 ## 🧑‍💻 Step 4 – Install the SqlServer module
 
-To install the SqlServer module, run this in powershell:
+If the SqlServer module is not already installet, to install the SqlServer module, run this in powershell:
 
 ```powershell
 Install-Module -Name SqlServer -Scope CurrentUser -Force -AllowClobber
