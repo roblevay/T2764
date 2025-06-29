@@ -10,7 +10,7 @@ This guide explains how to download and use the following diagnostic tools in SQ
 
 ---
 
-## 🧪 Exercise 1: Monitor and resolve a blocking situation
+## 🧪 Exercise: Monitor and resolve a blocking situation using built-in tools
 
 You will create a blocking situation, find more information about it and then decide which connection to KILL to resolve the situation. Note that KILL shouldn’t be taken lightly, so use with care in real life!
 
