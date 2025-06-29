@@ -108,7 +108,6 @@ C:\Pshell\ShowDatabases.ps1
 3. Comment out the old line (add `#` at the start), then add:
 
 ```powershell
-# Invoke-Sqlcmd -Query "SELECT name FROM sys.databases" -ServerInstance "localhost" 
 
 Invoke-Sqlcmd -Query "SELECT name FROM sysjobs" -ServerInstance "localhost" -Database msdb -TrustServerCertificate | Tee-Object -FilePath C:\Pshell\Jobs.csv
 Invoke-Sqlcmd -Query "SELECT name FROM sys.server_principals" -ServerInstance "localhost" -TrustServerCertificate | Tee-Object -FilePath C:\Pshell\Logins.csv
