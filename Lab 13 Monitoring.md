@@ -61,17 +61,20 @@ SELECT * FROM Person.Person;
 **Installation / Usage:**
 
 1. Go to the link above and select the T-SQL script that matches your SQL Server version, e.g., *SQL Server 2019 Diagnostic Information Queries*.
-2. Click on the download arrow which looks like this
+2. Click on the download arrow which looks like this. Do not register or log in.
 
  ![image](https://github.com/user-attachments/assets/5b33b14c-b551-4dd5-ac03-e97a24b45adb)
 
 3. Open the script in SSMS.
-4. Run the parts you're interested in – you don't need to run everything.
+4. Click Execute. The entire script will run. It will take around 15 seconds. Examine the results
+5. Next, run the parts you're interested in – you don't need to run everything.
 
 **Sample exercise:**
 
 ```sql
 -- Find top cached SPs by average CPU time
+USE AdventureWorks
+GO
 SELECT TOP(25)
     p.name AS [SP Name],
     qs.total_worker_time / qs.execution_count AS [AvgCPU],
@@ -84,8 +87,17 @@ INNER JOIN sys.dm_exec_procedure_stats AS qs
 ORDER BY [AvgCPU] DESC;
 ```
 
-* Load your server with some queries and re-run the script to observe changes.
+* Load your server with some queries and re-run the script to observe changes.For example
 
+```sql
+USE AdventureWorks
+GO
+CREATE PROC dbo.proc1 AS 
+SELECT * FROM AdventureWorks.Person.Person
+ORDER BY 1,2,3,4,5
+GO
+EXEC dbo.proc1
+```
 ---
 
 ### 2. sp\_Blitz
