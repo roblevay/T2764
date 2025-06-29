@@ -109,7 +109,7 @@ EXEC dbo.proc1
 
 1. Click on `sp_Blitz.sql` in the repo.
 2. Click "Raw" and copy all contents.
-3. Paste into SSMS and execute to install it.
+3. Paste into SSMS and execute to install it. The stored procedure dbo.sp_blitz is created
 
 **To run sp\_Blitz:**
 
