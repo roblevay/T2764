@@ -75,7 +75,7 @@ Log failed login attempts only.
 1. Right-click the session and select Watch Live Data
 2. Try to log in with bad credentials.
 3. Watch Live Data or open the .xel file.
-4. Confirm failed login captured.
+4. Confirm failed login captured. Two events per failed login attempt will probably appear. SDS Translation=Sql Server Data Stream översättning, the transalation to a SID (Security Identifier) failed
 
 ---
 
