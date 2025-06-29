@@ -177,7 +177,7 @@ cmd /c whoami > C:\Program Files\whoami.txt
 2. In the dialog:
    - **Credential Name**: `Cred_Student`
    - **Identity**: `North\Student`
-   - **Password**: `myS3cret`
+   - **Password**: `myS3cret2025`  (or whatever the password is)
    - Confirm the password
 3. Click **OK**.
 
