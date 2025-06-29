@@ -51,7 +51,7 @@ SELECT * FROM Person.Person;
 
 ---
 
-## 🗓️ Download and Installation
+## 🗓️ Download and Installation of useful thirdparty tools:
 
 ### 1. Glenn Berry's Diagnostic Queries
 
