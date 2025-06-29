@@ -40,7 +40,7 @@ If the folder C:\XELogs does not exist, create it!
 
 ### ✅ Verification:
 
-1. 2. Right-click the session > **Watch Live Data**.
+1. Right-click the session > **Watch Live Data**.
 2. Run:
 
    ```sql
@@ -93,7 +93,7 @@ Log only actual deadlocks.
 4. Add the fields  `database_name`, `sql_text`
 5. Add `event_file`, e.g. `C:\XELogs\Deadlocks.xel`
 6. Save and start session.
-
+7. Right-click the session and select Watch Live Data
 
 
 ### 🧪 Test the session: Simulate a Deadlock
