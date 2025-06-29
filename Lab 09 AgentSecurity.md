@@ -168,7 +168,6 @@ cmd /c whoami > C:\Program Files\whoami.txt
 
 ---
 
-Tack Robert! Här kommer din begärda omskrivning – samma sak men med **grafiska steg i SSMS**, så du slipper skriva T-SQL.
 
 ---
 
