@@ -72,9 +72,10 @@ Log failed login attempts only.
 
 ### ✅ Verification:
 
-1. Try to log in with bad credentials.
-2. Watch Live Data or open the .xel file.
-3. Confirm failed login captured.
+1. Right-click the session and select Watch Live Data
+2. Try to log in with bad credentials.
+3. Watch Live Data or open the .xel file.
+4. Confirm failed login captured.
 
 ---
 
