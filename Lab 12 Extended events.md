@@ -40,12 +40,13 @@ If the folder C:\XELogs does not exist, create it!
 
 ### ✅ Verification:
 
-1. Run:
+1. 2. Right-click the session > **Watch Live Data**.
+2. Run:
 
    ```sql
    WAITFOR DELAY '00:00:06';
    ```
-2. Right-click the session > **Watch Live Data**.
+
 3. Confirm event shows with duration > 5000000 µs, that is more than 5 seconds
 
 ---
