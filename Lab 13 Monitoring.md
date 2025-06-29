@@ -61,7 +61,9 @@ SELECT * FROM Person.Person;
 **Installation / Usage:**
 
 1. Go to the link above and select the T-SQL script that matches your SQL Server version, e.g., *SQL Server 2019 Diagnostic Information Queries*.
-2. Click on the ![image](https://github.com/user-attachments/assets/5b33b14c-b551-4dd5-ac03-e97a24b45adb)
+2. Click on the download arrow which looks like this
+
+ ![image](https://github.com/user-attachments/assets/5b33b14c-b551-4dd5-ac03-e97a24b45adb)
 
 3. Open the script in SSMS.
 4. Run the parts you're interested in – you don't need to run everything.
