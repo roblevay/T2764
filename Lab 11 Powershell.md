@@ -21,15 +21,16 @@ Learn how to:
 Uninstall-Module -Name SqlServer -AllVersions -Force
 ```
 
+If the module SqlServer is not installed, you will get an error message which is oky
+
 and then 
 
 ```powershell
 Install-Module -Name SqlServer -Scope CurrentUser -Force -AllowClobber
 ```
 
+If there is a question about NuGet, type Y and press Enter
 
-3. 
-4. Create a folder:
 
 
 ## 📁 Step 1 – Create Folder and First Script
