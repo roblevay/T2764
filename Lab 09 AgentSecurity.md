@@ -135,7 +135,7 @@ These roles are useful for delegating job management securely in multi-user envi
 Example (PowerShell as admin):
 
 ```powershell
-net user testuser myS3cret /add /domain
+net user testuser myS3cret /add 
 ```
 
 ---
