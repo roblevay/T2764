@@ -62,7 +62,7 @@ Log failed login attempts only.
 1. Create new session: `FailedLogins`
 2. On the **Events** page:
 
-   * Add `error_reported`
+   * Add `error_reported` from the Admin Channel
    * Filter:
 
      * Field: `error_number` = `18456`
