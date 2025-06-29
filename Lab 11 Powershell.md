@@ -118,6 +118,8 @@ Invoke-Sqlcmd -Query "SELECT name FROM sys.database_principals" -ServerInstance 
 
 4. Press **F5** to run the script.
 
+5. Check for the csv files in the folder C:\Pshell (The can be opened for example with notepad)
+
 ---
 
 ## 🧑‍💻 Step 4 – Install the SqlServer module
