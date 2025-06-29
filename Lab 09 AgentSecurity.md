@@ -161,7 +161,7 @@ net user testuser myS3cret /add
    - Command:
 
 ```cmd
-cmd /c whoami > C:\Program Files\whoami.txt
+cmd /c whoami >"C:\Program Files\whoami.txt"
 ```
 
 3. Run the job. It should fail with "Access Denied" unless `testuser` is local admin.
