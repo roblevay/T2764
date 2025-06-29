@@ -13,3 +13,9 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 ### 📚 Kursmaterial på Tibor Karaszis hemsida
 
 [karaszi.com](https://karaszi.com/)
+
+### 📁 Länkar till menyerna på lunchrestaurangerna
+
+[Provence](https://www.kvartersmenyn.se/index.php/rest/16302)
+
+[Wild Kitchen](https://www.kvartersmenyn.se/index.php/rest/16057)
