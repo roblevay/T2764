@@ -143,8 +143,9 @@ EXEC sp_Blitz;
 
 **Installation:**
 
-1. Download and open `sp_WhoIsActive.sql`
-2. Copy the contents and execute in SSMS to install
+1. Click on  `who_is_active.sql`
+2. Clic Raw
+3. Select the contents, copy the contents, paste it in SSMS and execute in SSMS to install
 
 **To run it:**
 
