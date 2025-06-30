@@ -177,6 +177,7 @@ EXEC dbo.sp_WhoIsActive;
 And clean up:
 
 ```sql
+-- In Window 1
 ROLLBACK TRAN;
 ```
 
