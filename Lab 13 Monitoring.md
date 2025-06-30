@@ -199,6 +199,7 @@ ROLLBACK TRAN;
 EXECUTE sp_PressureDetector;
 ```
 
+There is not likely a lot of pressure on your server...
 ---
 
 ### 5. sp\_HumanEvents
