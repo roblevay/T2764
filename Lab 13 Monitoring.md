@@ -211,8 +211,9 @@ EXECUTE sp_PressureDetector;
 
 **Installation:**
 
-1. Go to the GitHub repo and download the install script in `/sp_HumanEvents/`
-2. Run the file in SSMS
+1. Go to the GitHub repo and open the folder sp_HumanEvents
+2. Download the install script  `/sp_HumanEvents.sql/`
+3. Run the file in SSMS
 
 **To use it:**
 
