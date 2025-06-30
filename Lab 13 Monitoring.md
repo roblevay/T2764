@@ -225,10 +225,11 @@ EXEC dbo.sp_HumanEvents @event_type = 'query', @query_duration_ms = 1, @seconds_
 
 ```sql
 -- In Window 2 (while the above is running)
+USE AdventureWorks
 SELECT * FROM person.person;
 ```
 
-Go back to Window 1. The query will be captured.
+Go back to Window 1. The query will be captured.If not, try again!
 
 ---
 
