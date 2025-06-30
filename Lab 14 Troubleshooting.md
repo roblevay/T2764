@@ -12,13 +12,14 @@ Verify that your sql server is configured with mixed authentication (Windows and
 
 ## Step 1: Download and Run the PowerShell Script
 
-Download and execute the PowerShell file as administrator (click on Raw and then click the down-pointing arrow):
+Download these two files from the Troubleshooting folder on Github to the to the Dbfiles directory on your computer:
 
 ```
 Troubleshooting/Ex1.ps1
+RunEx1.bat
 ```
 
-
+Right-click RunEx1.bat and select Run as Administrator. It will make some fuzz on your server...
 
 ---
 
