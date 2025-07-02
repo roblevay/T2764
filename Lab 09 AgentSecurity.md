@@ -88,7 +88,9 @@ PRINT 'Hello from AgentReader';
 ```sql
 BACKUP DATABASE master TO DISK = 'master.bak'
 ```
-2. Try to execute the job. This hould not work. Why does it not work?
+2. Try to execute the job. This should not work. Why does it not work?
+
+(Because AgentOperator does not have persmissions to backup the database)
 
 
 ### Log in as `AgentOperator`:
