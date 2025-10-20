@@ -6,7 +6,7 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 
 ### 📁 Länk till kursfiler (5–9 maj)
 
-[Öppna kursfiler på OneDrive](https://1drv.ms/f/c/fb5c7f8b8caa2fb7/EhU7WeV7zhZHsbM7QZsgDVcB6wFyrJEyju6HEGnx5oiV1g?e=o4rhSm)
+[Öppna kursfiler på OneDrive](https://1drv.ms/t/c/fb5c7f8b8caa2fb7/EbV4ze8SySBApCHoF5nqm1MBO0hkDYKPqPmJTzIt9WxSFw?e=tE6yUa)
 
 ---
 
@@ -18,4 +18,3 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 
 [Provence](https://www.kvartersmenyn.se/index.php/rest/16302)
 
-[Wild Kitchen](https://www.kvartersmenyn.se/index.php/rest/16057)
