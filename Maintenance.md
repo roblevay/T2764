@@ -4,7 +4,7 @@
 
 ### Instructions
 Create the folder c:\T2765_Labfiles
-Download the file CorruptTsql.bak from the Files folder in Github to the newly created folder c:\T2765_Labfiles
+Download the file CorruptTsql.bak from the [Files](https://github.com/roblevay/T2765/tree/main/Files)  folder in Github to the newly created folder c:\T2765_Labfiles
 
 
 1. Restore the `CorruptTsql` database on the default instance using this command:
