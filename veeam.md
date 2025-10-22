@@ -32,4 +32,98 @@ Veeam tar image-backup (VM/OS) och COPY_ONLY FULL för extra skydd.
 | LOG | Var 5–15:e minut | Beroende på RPO |
 
 #### Veeam-jobb (Application-Aware Processing **på**)
-- Slå på
+- Slå på **Application-Aware (VSS)** för konsistens.  
+- Slå av **Process/Backup SQL transaction logs** (ingen logghantering i Veeam).  
+- Aktivera **Copy-only** för FULL – påverkar inte differentialbasen.
+
+#### Återställning
+- **Databas-PITR:** använd SQL-kedjan  
+  (`FULL → DIFF → LOG`).
+- **Hel maskin/volym:** återställ Veeam-imagen, starta SQL och lägg därefter på SQL-kedjan.
+
+**Fördelar:**  
+✅ Klassisk, förutsägbar SQL-kedja  
+✅ Lätt att verifiera med `RESTORE VERIFYONLY` och `DBCC`
+
+**Nackdelar:**  
+⚠️ Två system att övervaka (men tydligt avgränsade roller)
+
+---
+
+### B) Veeam-ledd strategi *(enkelt när allt ska ligga i Veeam)*
+
+**Princip:**  
+Veeam sköter FULL/Diff (om du använder det) och LOG-backuper via Application-Aware Processing.  
+SQL Agent-jobb för LOG stängs av.
+
+#### Veeam-jobb
+- **Application-Aware Processing:** På  
+- **Transaktionslogg-backup:** Aktiverad, välj intervall (t.ex. var 15:e minut)  
+- **Retention:** Enligt policy (t.ex. syntetiska fulla)
+
+#### SQL Agent-jobb
+- Inga LOG-jobb – stäng av eller ta bort.
+- Ad hoc `COPY_ONLY FULL` kan användas vid test/verifiering (inte regelbundet).
+
+#### Återställning
+- Använd **Veeam Explorer for Microsoft SQL**  
+  → punkt-i-tid-återställning direkt från Veeam.
+
+**Fördelar:**  
+✅ En enda “pane of glass”  
+✅ Enkel hantering av hela kedjan  
+
+**Nackdelar:**  
+⚠️ Du förlitar dig helt på Veeam för finmaskig SQL-återställning
+
+---
+
+## ⚠️ Viktiga detaljer och fallgropar
+
+- **`COPY_ONLY` gäller främst FULL.**  
+  Det “sekundära” systemet (oftast Veeam) ska använda `COPY_ONLY FULL`.
+
+- **Transaktionsloggar:**  
+  Endast *ett* system ska ta “riktiga” LOG-backuper (som trunkerar loggen).  
+  Undvik ad hoc `COPY_ONLY LOG` i drift.
+
+- **Recovery model:**  
+  För punkt-i-tid krävs `FULL` eller `BULK_LOGGED`.  
+  `SIMPLE` → inga LOG-backuper (använd då diff + täta fulla).
+
+- **Always On Availability Groups:**  
+  - Låt ett system ta LOG-backuper enligt AG-preferenser.  
+  - I Veeam: välj “Backup from preferred replica”.  
+  - Ta inte parallella LOG-backuper från olika repliker/system.
+
+- **Underhåll:**  
+  Kör `DBCC CHECKDB` i SQL-jobb – Veeam ersätter inte detta.
+
+- **Kompression & kryptering:**  
+  SQL- och Veeam-komprimering ger CPU-last → välj ett av dem.  
+  Kryptering bör vara konsekvent.
+
+- **Testa återställning regelbundet:**  
+  Fil-/imagenivå och PITR, t.ex. kvartalsvis.
+
+---
+
+## 🧩 Exempel på schema (SQL-ledd)
+
+**SQL Agent-jobb (förenklat):**
+
+```sql
+-- FULL (söndag 02:00)
+BACKUP DATABASE MyDb 
+TO DISK = 'X:\Backups\MyDb_full_YYYYMMDD.bak'
+WITH INIT, COMPRESSION, STATS = 5;
+
+-- DIFFERENTIAL (mån–lör 02:00)
+BACKUP DATABASE MyDb 
+TO DISK = 'X:\Backups\MyDb_diff_YYYYMMDD.bak'
+WITH DIFFERENTIAL, INIT, COMPRESSION, STATS = 5;
+
+-- LOG (var 15:e minut)
+BACKUP LOG MyDb 
+TO DISK = 'X:\Backups\MyDb_log_YYYYMMDD_HHMM.trn'
+WITH INIT, COMPRESSION, STATS = 5;
