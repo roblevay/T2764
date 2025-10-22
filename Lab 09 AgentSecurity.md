@@ -119,43 +119,16 @@ These roles are useful for delegating job management securely in multi-user envi
 
 ## 🎯 Objective
 
-1. Create a Windows user: `North\testuser` with password `myS3cret`.
-2. Configure SQL Server Agent to run under this account.
-3. Create a SQL Agent job that fails to run a CmdExec step due to insufficient privileges.
-4. Create a credential using `North\Student` with `myS3cret`.
-5. Create a proxy named `studproxy` based on that credential.
-6. Update the job to use the proxy so it succeeds.
+
+1. Create a SQL Agent job that fails to run a CmdExec step due to insufficient privileges.
+2. Create a credential using `North\Student` with `myS3cret`.
+3. Create a proxy named `studproxy` based on that credential.
+4. Update the job to use the proxy so it succeeds.
 
 ---
 
-## 🛠️ Step 1 – Create a Windows User
 
-1. Open PowerShell or Computer Management.
-2. Create user: `North\testuser`  
-   Password: `myS3cret`
-
-Example (PowerShell as admin):
-
-```powershell
-net user testuser myS3cret /add 
-```
-
----
-
-## 🧰 Step 2 – Set SQL Server Agent to Run as testuser
-
-1. Open **SQL Server Configuration Manager**.
-2. Go to **SQL Server Services**.
-3. Right-click **SQL Server Agent** → **Properties**.
-4. On the **Log On** tab:
-   - Select **This account**
-   - Enter `North\testuser`
-   - Password: `myS3cret`
-5. Click **OK**, then restart **SQL Server Agent**.
-
----
-
-## ❌ Step 3 – Create a Failing CmdExec Job Step
+## ❌ Step 1 – Create a Failing CmdExec Job Step
 
 1. In SSMS, create a new job called `Test Cmd Job`.
 2. Add a step:
@@ -173,7 +146,7 @@ cmd /c whoami >"C:\Program Files\whoami.txt"
 
 ---
 
-## 🔐 Step 4 – Create a Credential 
+## 🔐 Step 2 – Create a Credential 
 
 1. In SSMS, expand **Security** > right-click **Credentials** > **New Credential**.
 2. In the dialog:
@@ -187,7 +160,7 @@ cmd /c whoami >"C:\Program Files\whoami.txt"
 
 ---
 
-## 🧑‍💼 Step 5 – Create a Proxy 
+## 🧑‍💼 Step 3 – Create a Proxy 
 
 1. Expand **SQL Server Agent** > **Proxies** > **Operating System (CmdExec)**.
 2. Right-click **CmdExec** > **New Proxy**.
@@ -206,7 +179,7 @@ cmd /c whoami >"C:\Program Files\whoami.txt"
 ---
 
 
-## ✅ Step 6 – Update Job to Use Proxy
+## ✅ Step 4 – Update Job to Use Proxy
 
 1. Edit the job step.
 2. In the **Run as** dropdown, choose `studproxy`.
