@@ -12,7 +12,7 @@ Verify that your sql server is configured with mixed authentication (Windows and
 
 ## Step 1: Download and Run the PowerShell Script
 
-Download these two files from the Troubleshooting folder on Github to the to the Dbfiles directory on your computer:
+Download these two files from the Troubleshooting folder (https://github.com/roblevay/T2764/tree/main/Troubleshooting) on Github to the to the Dbfiles directory on your computer:
 
 ```
 Troubleshooting/Ex1.ps1
