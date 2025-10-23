@@ -39,7 +39,15 @@ If there is a question about NuGet, type Y and press Enter
 2. Create a folder:
 
 ```powershell
-mkdir C:\Pshell
+$path = "C:\Pshell"
+
+if (-not (Test-Path -Path $path)) {
+    New-Item -Path $path -ItemType Directory | Out-Null
+    Write-Host "Katalogen '$path' har skapats."
+} else {
+    Write-Host "Katalogen '$path' finns redan."
+}
+
 ```
 
 3. Open Notepad to create a script:
