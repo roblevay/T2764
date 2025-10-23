@@ -109,11 +109,7 @@ Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
 ## 🧑‍💻 Step 3 – Modify Script Using PowerShell ISE
 
 1. Open **PowerShell ISE as Administrator**.
-2. Open the script:
-
-```powershell
-C:\Pshell\ShowDatabases.ps1
-```
+2. Open the script **C:\Pshell\ShowDatabases.ps1**
 
 3. Comment out the old line (add `#` at the start), then add:
 
