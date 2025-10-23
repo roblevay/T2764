@@ -171,7 +171,7 @@ Invoke-Sqlcmd -ServerInstance "localhost" -Query "CREATE DATABASE TestDB" -Trust
 Invoke-Sqlcmd -ServerInstance "localhost" -Query "DROP DATABASE TestDB" -TrustServerCertificate
 
 # Backup a database
-Backup-SqlDatabase -ServerInstance "localhost" -Database "AdventureWorks" -BackupFile "C:\SqlBackups\AdventureWorks.bak" -TrustServerCertificate
+Backup-SqlDatabase -ServerInstance "localhost" -Database "AdventureWorks" -BackupFile "$((New-Object Microsoft.SqlServer.Management.Smo.Server 'localhost').Settings.BackupDirectory)\AdventureWorks.bak" -TrustServerCertificate
 
 ```
 
