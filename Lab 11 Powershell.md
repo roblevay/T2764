@@ -36,17 +36,19 @@ If there is a question about NuGet, type Y and press Enter
 ## 📁 Step 1 – Create Folder and First Script
 
 1. Open a command prompt or PowerShell.
-2. Create a folder:
+2. Remove the folder if it exists and create a new one for the scripts:
 
 ```powershell
 $path = "C:\Pshell"
 
-if (-not (Test-Path -Path $path)) {
-    New-Item -Path $path -ItemType Directory | Out-Null
-    Write-Host "Katalogen '$path' har skapats."
-} else {
-    Write-Host "Katalogen '$path' finns redan."
+if (Test-Path -Path $path) {
+    Remove-Item -Path $path -Recurse -Force
+    Write-Host "Katalogen '$path' fanns redan och har tagits bort."
 }
+
+New-Item -Path $path -ItemType Directory | Out-Null
+Write-Host "Katalogen '$path' har skapats på nytt."
+
 
 ```
 
