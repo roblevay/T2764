@@ -143,7 +143,7 @@ You may get different messages, depending on what is already installed. It does 
 2. Create the script:
 
 ```powershell
-C:\Pshell\ShowDatabasesNew.ps1
+notepad C:\Pshell\ShowDatabasesNew.ps1
 ```
 
 Paste this in the script:
