@@ -139,7 +139,7 @@ These roles are useful for delegating job management securely in multi-user envi
 cmd /c whoami >"C:\Program Files\whoami.txt"
 ```
 
-3. Run the job. It should fail with "Access Denied" unless unless the service account i a local admin.
+3. Run the job. It should fail with "Access Denied" unless unless the service account is a local admin on the server North.
 
 ---
 
