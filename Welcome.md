@@ -4,7 +4,7 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 
 ---
 
-### 📁 Länk till kursfiler (20-24 oktober)
+### 📁 Länk till kursfiler (15-19 december)
 
 [Öppna kursfiler på OneDrive](https://1drv.ms/f/c/fb5c7f8b8caa2fb7/IgAVWfhrVDZ2QK_SMwwasmPEAX13pcmoW1h8vkduLsmql3Y?e=nYJKa4)
 
