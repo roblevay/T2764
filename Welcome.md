@@ -16,7 +16,5 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 
 ### 📁 Länkar till menyerna på lunchrestaurangerna
 
-[Provence](https://www.kvartersmenyn.se/index.php/rest/16302)
-
-[Pralin](https://pralinnod.kvartersmenyn.se/)
+[Länk till virtuella maskiner] (http://4.223.82.238:9443)
 
