@@ -14,7 +14,7 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 
 [karaszi.com](https://karaszi.com/)
 
-### 📁 Länkar till menyerna på lunchrestaurangerna
+### 📁 Länkar till virtuella maskiner
 
 [Länk till virtuella maskiner](http://4.223.82.238:9443)
 
