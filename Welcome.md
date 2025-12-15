@@ -18,3 +18,5 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 
 [Länk till virtuella maskiner](http://4.223.82.238:9443)
 
+[Länk till virtuella maskiner, krypterat](https://4.223.82.238:443)
+
