@@ -1,4 +1,4 @@
-import-module sqlps
+import-module sqlserver
 $ServerInstance = "north"
 $LogPath = "C:\backup\DBCC_CHECKDB_north.log"
 $PhysicalOnly = $false   # sätt $true om du vill ha PHYSICAL_ONLY
