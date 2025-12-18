@@ -9,3 +9,27 @@ INSERT INTO siffror VALUES(1),(2),(3)
 --7. Töm tabellen
 TRUNCATE TABLE siffror
 --Återställ till den icke tömda tabellen
+
+
+USE master
+CREATE DATABASE restoredb
+
+BACKUP DATABASE restoredb TO DISK='c:\backup\restoredb.bak' WITH INIT
+
+CREATE TABLE restoredb..siffror (col1 INT)
+
+BACKUP LOG restoredb TO DISK='c:\backup\restoredb.bak' WITH NOINIT
+
+INSERT INTO restoredb..siffror VALUES(1),(2),(3)
+
+BACKUP LOG restoredb TO DISK='c:\backup\restoredb.bak' WITH NOINIT
+
+TRUNCATE TABLE restoredb.dbo.siffror
+
+BACKUP LOG restoredb TO DISK='c:\backup\restoredb.bak' WITH NOINIT,NORECOVERY
+
+RESTORE DATABASE restoredb FROM  DISK='c:\backup\restoredb.bak' WITH FILE=1, NORECOVERY
+RESTORE LOG restoredb FROM  DISK='c:\backup\restoredb.bak' WITH FILE=2, NORECOVERY
+RESTORE LOG restoredb FROM  DISK='c:\backup\restoredb.bak' WITH FILE=3, RECOVERY
+
+SELECT * FROM restoredb..siffror
