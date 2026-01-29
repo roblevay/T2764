@@ -52,11 +52,13 @@ Write-Host "Katalogen '$path' har skapats på nytt."
 
 ```
 
-3. Open Notepad to create a script:
+3. Open Notepad to create a script clicking on the Windows button in the lower left corner and pressing Windows+R:
 
 ```powershell
 notepad C:\Pshell\ShowContent.ps1
 ```
+
+THere may be a mesage that notepad cannot find the file. Click **Yes**
 
 4. Paste the following code into the file:
 
@@ -76,11 +78,13 @@ C:\Pshell\ShowContent.ps1
 
 ## 📦 Step 2 – Create a Script to Show SQL Server Databases
 
-1. Open Notepad again:
+1. Open Notepad to create a script clicking on the Windows button in the lower left corner and pressing Windows+R:
 
 ```powershell
 notepad C:\Pshell\ShowDatabases.ps1
 ```
+
+THere may be a mesage that notepad cannot find the file. Click **Yes**
 
 2. Paste this basic SQL discovery script:
 
