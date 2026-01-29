@@ -144,13 +144,9 @@ You may get different messages, depending on what is already installed. It does 
 ## 🧑‍💻 Step 5 – Modify Script Using PowerShell ISE
 
 1. Open **PowerShell ISE as Administrator**.
-2. Create the script:
 
-```powershell
-notepad C:\Pshell\ShowDatabasesNew.ps1
-```
 
-Paste this in the script:
+Paste this in a new script window:
 
 ```powershell
 # Import the module
@@ -179,8 +175,9 @@ Backup-SqlDatabase -ServerInstance "localhost" -Database "AdventureWorks" -Backu
 
 ```
 
-Run each of the commands separately by selecting one and clicking Run Selection
+Run each of the commands separately by selecting one and clicking Run Selection. Save the script file as **C:\Pshell\ShowNewDatabases.ps1
 
+Close all windows
 
 
 ---
