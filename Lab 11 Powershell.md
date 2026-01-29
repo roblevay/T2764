@@ -58,7 +58,7 @@ Write-Host "Katalogen '$path' har skapats på nytt."
 notepad C:\Pshell\ShowContent.ps1
 ```
 
-THere may be a mesage that notepad cannot find the file. Click **Yes**
+There may be a mesage that notepad cannot find the file. Click **Yes**
 
 4. Paste the following code into the file:
 
