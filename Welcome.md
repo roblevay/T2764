@@ -4,7 +4,7 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 
 ---
 
-### 📁 Länk till kursfiler (15-19 december)
+### 📁 Länk till kursfiler (2-6 februari)
 
 [Öppna kursfiler på OneDrive](https://1drv.ms/f/c/fb5c7f8b8caa2fb7/IgAVWfhrVDZ2QK_SMwwasmPEAX13pcmoW1h8vkduLsmql3Y?e=nYJKa4)
 
@@ -16,7 +16,7 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 
 ### 📁 Länkar till virtuella maskiner
 
-[Länk till virtuella maskiner](http://4.223.82.238:9443)
+[Länk till virtuella maskiner](remote.levay.se)
 
-[Länk till virtuella maskiner, krypterat](https://remote.levay.se:443)
+
 
