@@ -16,7 +16,7 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 
 ### 📁 Länkar till virtuella maskiner
 
-[Länk till virtuella maskiner](remote.levay.se)
+[Länk till virtuella maskiner](http://remote.levay.se)
 
 
 
