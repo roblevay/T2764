@@ -19,4 +19,9 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 [Länk till virtuella maskiner](http://remote.levay.se)
 
 
+### 📁 Lunchrestauranger
+
+[Pralin, runt hörnet](https://pralinnod.kvartersmenyn.se/)
+
+
 
