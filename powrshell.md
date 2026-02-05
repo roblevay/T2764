@@ -104,10 +104,4 @@ Invoke-Sqlcmd `
 exit
 ```
 
-Vill du att nästa version även ska:
 
-* fungera **både i Windows PowerShell och PowerShell 7**
-* innehålla ett avsnitt om **sqlcmd**
-* vara helt anpassad för en **kurslab**
-
-Säg bara hur du vill ha den 👌
