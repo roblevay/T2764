@@ -89,15 +89,7 @@ dir
 
 ## 8. Köra SQL-frågor med PowerShell
 
-```powershell
-Invoke-Sqlcmd `
-  -ServerInstance "localhost" `
-  -Database "master" `
-  -Query "SELECT name FROM sys.databases"
-```
 
-
-**Fler exempel**
 ---
 
 ## Exempel 1: Lista alla databaser
