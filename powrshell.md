@@ -62,10 +62,17 @@ cd SQL
 dir
 ```
 
-Välj instans, till exempel:
+Välj server, till exempel:
 
 ```powershell
 cd North
+dir
+```
+
+Välj instans, till exempel:
+
+```powershell
+cd DEFAULT
 dir
 ```
 
