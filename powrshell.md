@@ -96,9 +96,61 @@ Invoke-Sqlcmd `
   -Query "SELECT name FROM sys.databases"
 ```
 
+
+**Fler exempel**
 ---
 
-## 9. Avsluta PowerShell
+## Exempel 1: Lista alla databaser
+
+```powershell
+Invoke-Sqlcmd `
+  -ServerInstance "localhost" `
+  -Database "master" `
+  -Query "SELECT name FROM sys.databases"
+```
+
+---
+
+## Exempel 2: Kontrollera SQL Server-version
+
+```powershell
+Invoke-Sqlcmd `
+  -ServerInstance "localhost" `
+  -Database "master" `
+  -Query "SELECT @@VERSION"
+```
+
+---
+
+## Exempel 3: Lista alla tabeller i en databas
+
+```powershell
+Invoke-Sqlcmd `
+  -ServerInstance "localhost" `
+  -Database "AdventureWorks" `
+  -Query "
+    SELECT TABLE_SCHEMA, TABLE_NAME
+    FROM INFORMATION_SCHEMA.TABLES
+    WHERE TABLE_TYPE = 'BASE TABLE'
+  "
+```
+
+---
+
+## Exempel 4: Skapa en databas
+
+```powershell
+Invoke-Sqlcmd `
+  -ServerInstance "localhost" `
+  -Database "master" `
+  -Query "CREATE DATABASE TestDB"
+```
+
+
+
+---
+
+##  Avsluta PowerShell
 
 ```powershell
 exit
