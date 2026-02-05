@@ -65,7 +65,7 @@ dir
 Välj instans, till exempel:
 
 ```powershell
-cd MSSQLSERVER
+cd North
 dir
 ```
 
