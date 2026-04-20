@@ -1,3 +1,8 @@
+/*********************************************************************************************
+Detta script generar proceduren sp_help_revlogin. Installera och kör sedan EXEC sp_help_revlogin
+Ett script för att skapa logins med rätt sid skapas
+**********************************************************************************************/
+
 USE [master]
 GO
 IF OBJECT_ID('dbo.sp_hexadecimal') IS NOT NULL
