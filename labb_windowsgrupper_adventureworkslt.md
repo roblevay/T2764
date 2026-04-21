@@ -1,8 +1,6 @@
 # Labb: Windows-grupper, logins och användare i AdventureWorksLT
 
 
-
-
 ## Windows-grupper och medlemmar
 Baserat på underlaget finns följande grupper och medlemmar:
 
@@ -29,11 +27,10 @@ Skapa en lösning i SQL Server som uppfyller följande krav:
    - `NORTH\DBA`
    - `NORTH\ItSupport`
    - `NORTH\Controllers`
-2. Lägg `NORTH\DBA` i den fasta serverrollen `sysadmin`.
-3. I databasen `AdventureWorksLT` ska du skapa användare för grupperna.
-4. Ge gruppen `NORTH\ItSupport` rättigheter på tabellen `SalesLT.Product`.
-5. Ge gruppen `NORTH\Controllers` rättigheter på tabellen `SalesLT.SalesOrderHeader`.
-6. Verifiera att rättigheterna fungerar genom att testa både:
+2. I databasen `AdventureWorksLT` ska du skapa användare för grupperna.
+3. Ge gruppen `NORTH\ItSupport` rättigheter på tabellen `SalesLT.Product`.
+4. Ge gruppen `NORTH\Controllers` rättigheter på tabellen `SalesLT.SalesOrderHeader`.
+5. Verifiera att rättigheterna fungerar genom att testa både:
    - `EXECUTE AS LOGIN = 'NORTH\...'
    - `EXECUTE AS USER = '...'
 
@@ -41,17 +38,6 @@ Skapa en lösning i SQL Server som uppfyller följande krav:
 
 
 ### Testa:
-
-
-### Test 6: DBA som login
-
-```sql
-
-EXECUTE AS LOGIN = 'NORTH\John';
-CREATE DATABASE xyz123
-DROP DATABASE xyz123
-REVERT;
-```
 
 
 
@@ -62,7 +48,7 @@ REVERT;
 
 > Här använder du databasens användarnamn, alltså samma namn som användarna skapades med i `AdventureWorksLT`.
 
-### Test 4: ItSupport som user
+### Test  ItSupport som user
 
 ```sql
 USE AdventureWorksLT;
@@ -74,7 +60,7 @@ SELECT TOP (5) * FROM SalesLT.SalesOrderHeader;
 REVERT;
 ```
 
-### Test 5: Controllers som user
+### Test  Controllers som user
 
 ```sql
 USE AdventureWorksLT;
