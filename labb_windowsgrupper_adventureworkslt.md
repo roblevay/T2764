@@ -1,35 +1,23 @@
 # Labb: Windows-grupper, logins och användare i AdventureWorksLT
 
-
-## Windows-grupper och medlemmar
-Baserat på underlaget finns följande grupper och medlemmar:
-
-### Grupp: DBA
-- John
-
-### Grupp: ItSupport
-- Frank
-- Bill
-- Pat
-
-### Grupp: Controllers
-- Pat
-- Jean
-
-> Notera att **Pat** är medlem i både **ItSupport** och **Controllers**.
-
 ---
 
-## Uppgift
-Skapa en lösning i SQL Server som uppfyller följande krav:
 
-1. Skapa Windows-logins för grupperna:
-   - `NORTH\DBA`
-   - `NORTH\ItSupport`
-   - `NORTH\Controllers`
-2. I databasen `AdventureWorksLT` ska du skapa användare för grupperna.
-3. Ge gruppen `NORTH\ItSupport` rättigheter på tabellen `SalesLT.Product`.
-4. Ge gruppen `NORTH\Controllers` rättigheter på tabellen `SalesLT.SalesOrderHeader`.
+
+--I windows, skapa två grupper:
+
+-ekonomi
+
+-data
+
+Lägg till Pat till gruppen ekonomi och Frank till gruppen data
+
+1. Skapa Windows-logins för grupperna om de inte redan finns:
+   - `NORTH\ekonomi`
+   - `NORTH\data`
+2. I databasen `AdventureWorksLT` ska du skapa användare för dessa logins.
+3. Ge gruppen `NORTH\data` select-rättigheter på tabellen `SalesLT.Product`.
+4. Ge gruppen `NORTH\ekonomi` select-rättigheter på tabellen `SalesLT.SalesOrderHeader`.
 5. Verifiera att rättigheterna fungerar genom att testa både:
    - `EXECUTE AS LOGIN = 'NORTH\...'
    - `EXECUTE AS USER = '...'
@@ -56,7 +44,6 @@ GO
 
 EXECUTE AS USER = 'NORTH\Frank';
 SELECT TOP (5) * FROM SalesLT.Product;
-SELECT TOP (5) * FROM SalesLT.SalesOrderHeader;
 REVERT;
 ```
 
@@ -68,7 +55,6 @@ GO
 
 EXECUTE AS USER = 'NORTH\Pat';
 SELECT TOP (5) * FROM SalesLT.SalesOrderHeader;
-SELECT TOP (5) * FROM SalesLT.Product;
 REVERT;
 ```
 
