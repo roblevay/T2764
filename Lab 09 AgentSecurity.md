@@ -121,7 +121,7 @@ These roles are useful for delegating job management securely in multi-user envi
 
 
 1. Create a SQL Agent job that fails to run a CmdExec step due to insufficient privileges.
-2. Create a credential using `North\Student` with `myS3cret`.
+2. Create a credential using `North\Student` with `myS3cret2025`.
 3. Create a proxy named `studproxy` based on that credential.
 4. Update the job to use the proxy so it succeeds.
 
