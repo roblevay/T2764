@@ -165,10 +165,10 @@ Get-SqlLogin -ServerInstance "localhost"
 Get-SqlInstance -ServerInstance "localhost"
 
 # Create a database
-Invoke-Sqlcmd -ServerInstance "localhost" -Query "CREATE DATABASE TestDB" -TrustServerCertificate
+Invoke-Sqlcmd -ServerInstance "localhost" -Query "CREATE DATABASE TestDB123" -TrustServerCertificate
 
 # Delete a database
-Invoke-Sqlcmd -ServerInstance "localhost" -Query "DROP DATABASE TestDB" -TrustServerCertificate
+Invoke-Sqlcmd -ServerInstance "localhost" -Query "DROP DATABASE TestDB123" -TrustServerCertificate
 
 # Backup a database
 Backup-SqlDatabase -ServerInstance "localhost" -Database "AdventureWorks" -BackupFile "$((New-Object Microsoft.SqlServer.Management.Smo.Server 'localhost').Settings.BackupDirectory)\AdventureWorks.bak" -TrustServerCertificate
