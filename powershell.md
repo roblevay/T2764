@@ -138,6 +138,15 @@ Invoke-Sqlcmd `
   -Query "CREATE DATABASE TestDBxyz"
 ```
 
+## Exempel 5: Ta bort databasen
+
+```powershell
+Invoke-Sqlcmd `
+  -ServerInstance "localhost" `
+  -Database "master" `
+  -Query "DROP DATABASE TestDBxyz"
+```
+
 
 
 ---
