@@ -21,7 +21,7 @@ Learn how to:
 Uninstall-Module -Name SqlServer -AllVersions -Force
 ```
 
-If the module SqlServer is not installed, you will get an error message which is oky
+If the module SqlServer is not installed, you will get an error message which is okey
 
 and then 
 
