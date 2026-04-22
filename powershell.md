@@ -135,7 +135,7 @@ Invoke-Sqlcmd `
 Invoke-Sqlcmd `
   -ServerInstance "localhost" `
   -Database "master" `
-  -Query "CREATE DATABASE TestDB"
+  -Query "CREATE DATABASE TestDBxyz"
 ```
 
 
