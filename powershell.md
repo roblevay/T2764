@@ -3,7 +3,7 @@
 
 # Navigera i SQL Server via PowerShell
 
-## 1. Starta PowerShell från kommandoprompt
+## 1. Starta PowerShell från kommandoprompt som administratör
 
 ```cmd
 powershell
