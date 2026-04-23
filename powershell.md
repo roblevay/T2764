@@ -110,7 +110,7 @@ Invoke-Sqlcmd `
   -ServerInstance "localhost" `
   -Database "master" `
   -Query "SELECT @@VERSION"
-  
+  -TrustServerCertificate
 ```
 
 ---
@@ -124,9 +124,8 @@ Invoke-Sqlcmd `
   -Query "
     SELECT TABLE_SCHEMA, TABLE_NAME
     FROM INFORMATION_SCHEMA.TABLES
-    WHERE TABLE_TYPE = 'BASE TABLE'
-   
-  "
+    WHERE TABLE_TYPE = 'BASE TABLE'     "
+-TrustServerCertificate
 ```
 
 ---
@@ -138,6 +137,7 @@ Invoke-Sqlcmd `
   -ServerInstance "localhost" `
   -Database "master" `
   -Query "CREATE DATABASE TestDBxyz"
+-TrustServerCertificate
 
 ```
 
