@@ -95,10 +95,10 @@ dir
 ## Exempel 1: Lista alla databaser
 
 ```powershell
-Invoke-Sqlcmd `
-  -ServerInstance "localhost" `
+Invoke-Sqlcmd -ServerInstance "localhost" `
   -Database "master" `
-  -Query "SELECT name FROM sys.databases"
+  -Query "SELECT name FROM sys.databases" `
+  -TrustServerCertificate
 ```
 
 ---
@@ -110,6 +110,7 @@ Invoke-Sqlcmd `
   -ServerInstance "localhost" `
   -Database "master" `
   -Query "SELECT @@VERSION"
+  -TrustServerCertificate
 ```
 
 ---
@@ -124,6 +125,7 @@ Invoke-Sqlcmd `
     SELECT TABLE_SCHEMA, TABLE_NAME
     FROM INFORMATION_SCHEMA.TABLES
     WHERE TABLE_TYPE = 'BASE TABLE'
+      -TrustServerCertificate
   "
 ```
 
@@ -136,6 +138,7 @@ Invoke-Sqlcmd `
   -ServerInstance "localhost" `
   -Database "master" `
   -Query "CREATE DATABASE TestDBxyz"
+  -TrustServerCertificate
 ```
 
 ## Exempel 5: Ta bort databasen
@@ -145,6 +148,7 @@ Invoke-Sqlcmd `
   -ServerInstance "localhost" `
   -Database "master" `
   -Query "DROP DATABASE TestDBxyz"
+  -TrustServerCertificate
 ```
 
 
