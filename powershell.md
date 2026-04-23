@@ -1,5 +1,4 @@
 
----
 
 # Navigera i SQL Server via PowerShell
 
@@ -89,16 +88,12 @@ dir
 
 ## 8. Köra SQL-frågor med PowerShell
 
-
 ---
 
 ## Exempel 1: Lista alla databaser
 
 ```powershell
-Invoke-Sqlcmd -ServerInstance "localhost" `
-  -Database "master" `
-  -Query "SELECT name FROM sys.databases" `
-  -TrustServerCertificate
+Invoke-Sqlcmd -ServerInstance "localhost" -Database "master" -Query "SELECT name FROM sys.databases" -TrustServerCertificate
 ```
 
 ---
@@ -106,11 +101,7 @@ Invoke-Sqlcmd -ServerInstance "localhost" `
 ## Exempel 2: Kontrollera SQL Server-version
 
 ```powershell
-Invoke-Sqlcmd `
-  -ServerInstance "localhost" `
-  -Database "master" `
-  -Query "SELECT @@VERSION"
-  -TrustServerCertificate
+Invoke-Sqlcmd -ServerInstance "localhost" -Database "master" -Query "SELECT @@VERSION" -TrustServerCertificate
 ```
 
 ---
@@ -118,14 +109,7 @@ Invoke-Sqlcmd `
 ## Exempel 3: Lista alla tabeller i en databas
 
 ```powershell
-Invoke-Sqlcmd `
-  -ServerInstance "localhost" `
-  -Database "AdventureWorks" `
-  -Query "
-    SELECT TABLE_SCHEMA, TABLE_NAME
-    FROM INFORMATION_SCHEMA.TABLES
-    WHERE TABLE_TYPE = 'BASE TABLE'     "
--TrustServerCertificate
+Invoke-Sqlcmd -ServerInstance "localhost" -Database "AdventureWorks" -Query "SELECT TABLE_SCHEMA, TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'" -TrustServerCertificate
 ```
 
 ---
@@ -133,29 +117,20 @@ Invoke-Sqlcmd `
 ## Exempel 4: Skapa en databas
 
 ```powershell
-Invoke-Sqlcmd `
-  -ServerInstance "localhost" `
-  -Database "master" `
-  -Query "CREATE DATABASE TestDBxyz"
--TrustServerCertificate
-
+Invoke-Sqlcmd -ServerInstance "localhost" -Database "master" -Query "CREATE DATABASE TestDBxyz" -TrustServerCertificate
 ```
+
+---
 
 ## Exempel 5: Ta bort databasen
 
 ```powershell
-Invoke-Sqlcmd `
-  -ServerInstance "localhost" `
-  -Database "master" `
-  -Query "DROP DATABASE TestDBxyz"
-  -TrustServerCertificate
+Invoke-Sqlcmd -ServerInstance "localhost" -Database "master" -Query "DROP DATABASE TestDBxyz" -TrustServerCertificate
 ```
-
-
 
 ---
 
-##  Avsluta PowerShell
+## Avsluta PowerShell
 
 ```powershell
 exit
