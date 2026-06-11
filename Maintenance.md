@@ -1,9 +1,4 @@
-
-
-
-
-
-# Exercise 2: SQL Server Index Fragmentation & Statistics Exercise
+# Exercise 1: SQL Server Index Fragmentation & Statistics Exercise
 
 ## 🏁 Step 1: Create test database and table
 
@@ -130,7 +125,7 @@ You've now learned how to:
 
 
 
-# 🛠️ Exercise 3: SQL Server Maintenance Plans – Step-by-Step Exercise
+# 🛠️ Exercise 2: SQL Server Maintenance Plans – Step-by-Step Exercise
 
 ## 🎯 Objective
 
@@ -233,7 +228,7 @@ If time permits, verify that the Sql Server Agent service is running and execute
 &nbsp;
 
 
-# 🔧 Exercise 4: Using Ola Hallengren’s SQL Server Maintenance Solution
+# 🔧 Exercise 3: Using Ola Hallengren’s SQL Server Maintenance Solution
 
 ## 🎯 Objective
 
