@@ -71,4 +71,3 @@ Invoke-Sqlcmd -ServerInstance localhost -Query "SELECT @@VERSION"
 ```
 
 Det viktiga är alltså att använda **Save-Module**, inte **Install-Module**, när du förbereder installationen för en offline-dator.
-
