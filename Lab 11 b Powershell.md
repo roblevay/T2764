@@ -35,7 +35,7 @@ If there is a question about NuGet, type Y and press Enter
 
 ## 📁 Step 1 – Create Folder and First Script
 
-1. Open a command prompt or PowerShell.
+1. Open  PowerShell.
 2. Remove the folder if it exists and create a new one for the scripts:
 
 ```powershell
