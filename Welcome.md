@@ -5,6 +5,12 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 ---
 
 
+### 📁 Länk till kursfiler (23-27 november)
+
+
+[Öppna kursfiler på Onedrive](https://1drv.ms/f/c/fb5c7f8b8caa2fb7/IgCshNoZG736QLVEpt2BKN_SAWrMGTELwy1K0gewInD3-2w?e=0eielQ)
+
+
 ### 📁 Länk till kursfiler (29 juni-3 juli)
 
 
