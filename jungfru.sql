@@ -24,3 +24,23 @@ CREATE TABLE skär
 EXECUTE AS USER='North\Andersson'
 SELECT * FROM skär
 REVERT
+
+
+
+**************************************************
+
+*******************************************************
+
+--SQL-metoden för behörighet
+--1. Skapa användarna som logins
+--i sql server och användare i databasen
+--2. Skapa en roll SQLKarusellen i
+--databasen och lägg till användarna
+--3. Ge behörighet till tabellen
+--till rollen
+
+
+--Testa
+EXECUTE AS USER='Andersson'
+SELECT * FROM skär
+REVERT
