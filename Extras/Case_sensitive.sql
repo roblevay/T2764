@@ -1,0 +1,7 @@
+SELECT
+	*
+FROM
+	person.Person
+WHERE
+	Lastname='JOnes' COLLATE FINNISH_SWEDISH_CS_AS
+	
