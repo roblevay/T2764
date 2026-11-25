@@ -72,7 +72,8 @@ At output file, type C:\DemoDatabases\\$(ESCAPE_NONE(MACHINENAME))_$(ESCAPE_NONE
 
 - `$(ESCAPE_NONE(JOBNAME))`: Inserts the job name.
 - `$(ESCAPE_NONE(MACHINENAME))`: Inserts the machine name.
-- `$(ESCAPE_NONE(STRTDT))`: Inserts the job start date and time.
+- `$(ESCAPE_NONE(STRTDT))`: Inserts the job start date
+-  $(ESCAPE_NONE(STRTTM)) : Inserts time
 
 Tokens are automatically replaced at runtime by SQL Server Agent.
 
