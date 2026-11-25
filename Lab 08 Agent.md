@@ -43,7 +43,7 @@ At output file, type C:\DemoDatabases\\$(ESCAPE_NONE(MACHINENAME))_$(ESCAPE_NONE
 
 
 
- This token will create a file with the machine name, job name and date and time when the job is run
+ This token will create a file with the machine name, job name and date  when the job is run
 
 ---
 
