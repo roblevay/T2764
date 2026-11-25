@@ -1,0 +1,11 @@
+CREATE TABLE namn
+(enamn	VARCHAR(50))
+
+INSERT INTO namn VALUES ('Öberg')
+INSERT INTO namn VALUES ('Oxenstierna')
+INSERT INTO namn VALUES ('Axnér')
+INSERT INTO namn VALUES ('Ärlig')
+
+SELECT * FROM namn ORDER BY enamn--Fel 
+
+SELECT * FROM namn ORDER BY enamn COLLATE FINNISH_SWEDISH_CI_AS--Rätt
