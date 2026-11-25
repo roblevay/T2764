@@ -191,6 +191,12 @@ It should now succeed, and the file `C:\Program Files\whoami.txt` will show `Nor
 
 ## 📝 Summary
 
+--Proxy-konto
+
+--1. Skapa en credential (Lagra ett adminkonto i sql server)
+--2. Skapa en proxy för er credential
+--3. Använd proxyn i jobbsteget
+
 - SQL Server Agent can run as a low-privilege account.
 - Elevated operations can be performed using proxies with credentials.
 - This separates job ownership from privilege escalation cleanly and securely.
