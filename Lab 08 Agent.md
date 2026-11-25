@@ -85,3 +85,16 @@ You now know how to:
 - Use Agent Tokens for dynamic logging
 - Re-deploy jobs to another server
 
+- Följande värden för kryptering finns:
+
+0: SSL är inaktiverat.
+1: SSL är aktiverat.
+2: SSL är aktiverat med en FIPS-certifierad krypteringsalgoritm.
+Om du vill ändra det, här är hur du gör det:
+
+Starta regedit (Registret Editor).
+Navigera till Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL15.MSSQLSERVER\SQLServerAgent\MsxEncryptChannelOptions
+Högerklicka på nyckeln och välj Modify.
+Ändra värdet till 0 för att inaktivera SSL, eller det värde som är lämpligt för din situation.
+Starta om SQL Server Agent för att ändringarna ska träda i kraft.
+
