@@ -12,3 +12,40 @@
 --8. Töm tabellen
 --9. Återställ databasen och första loggen
 --SELECT * FROM veckodagar ska ge resultat Måndag
+
+
+
+--Lösningsförslag
+
+CREATE DATABASE Tidsdb
+
+USE tidsdb
+CREATE TABLE veckodagar (namn VARCHAR(50))
+
+USE master
+
+BACKUP DATABASE tidsdb TO DISK='c:\backup\tidsdb.bak' WITH INIT
+
+INSERT INTO tidsdb..veckodagar VALUES ('Måndag')
+
+BACKUP LOG tidsdb TO DISK='c:\backup\tidsdb.bak' WITH NOINIT
+
+INSERT INTO tidsdb..veckodagar VALUES ('Tisdag')
+
+BACKUP LOG tidsdb TO DISK='c:\backup\tidsdb.bak' WITH NOINIT
+
+TRUNCATE TABLE tidsdb..veckodagar
+
+RESTORE HEADERONLY FROM DISK='c:\backup\tidsdb.bak'
+
+USE [master]
+RESTORE DATABASE [Tidsdb] FROM  DISK = N'c:\backup\tidsdb.bak' 
+WITH  FILE = 1,  NORECOVERY,REPLACE
+
+RESTORE LOG [Tidsdb] FROM  DISK = N'c:\backup\tidsdb.bak' 
+WITH  FILE = 2
+
+SELECT * FROM tidsdb..veckodagar
+
+GO
+
