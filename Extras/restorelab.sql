@@ -1,0 +1,14 @@
+--1. Skapa en databas som heter tidsdb
+--2. I denna databas, skapa en tabell som heter
+--veckodagar 
+--CREATE TABLE veckodagar (namn VARCHAR(50))
+--3. Backup av databasen
+--4. Lägg till en dag
+--INSERT INTO veckodagar VALUES ('Måndag')
+--5. Backup av logggen
+--6. Lägg till en dag
+--INSERT INTO veckodagar VALUES ('Tisdag')
+--7 Backup av loggen
+--8. Töm tabellen
+--9. Återställ databasen och första loggen
+--SELECT * FROM veckodagar ska ge resultat Måndag
