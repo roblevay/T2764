@@ -46,3 +46,8 @@ Välkomna till denna sida med några extra övningar. De kan vara användbara b�
 ## Always on
 
 [Always On Film](https://www.youtube.com/watch?v=9CqhH03vLeo)
+
+
+## Zoom
+
+[Zoom](https://us06web.zoom.us/j/84129337131?pwd=JySe0nxXIIIB9bo5eI2edrSllWBZ95.1)
